@@ -8,6 +8,7 @@
 
 import Alamofire
 
+/// Scale Team informations of Api 42 route based on protocol `ApiRouter`
 enum ScaleTeamsRouter: ApiRouter {
 	
 	// MARK: - Cases

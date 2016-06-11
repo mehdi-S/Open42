@@ -1,0 +1,10 @@
+jazzy \
+  --clean \
+  --min-acl internal \
+  -e ./correct42/AppDelegate.swift \
+  --author espiroux \
+  --author_url https://spiroux-web.fr \
+  --github_url https://github.com/emericspiroux/Open42 \
+  -m Open42 \
+  -x -workspace,correct42.xcworkspace,-scheme,Open42 \ 
+  -r http://docopen42.spiroux-web.fr/

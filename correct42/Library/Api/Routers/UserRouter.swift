@@ -8,6 +8,7 @@
 
 import Alamofire
 
+/// User informations of Api 42 route based on protocol `ApiRouter`
 enum UserRouter: ApiRouter {
 
 	// MARK: - Cases
@@ -31,7 +32,7 @@ enum UserRouter: ApiRouter {
 	*/
 	case SearchPage(Int)
 	
-	// MARK: - APIRouter protocols
+	// MARK: - ApiRouter protocols
 	/**
 	- .ReadUser, .Me, .Search, .SearchPage = .GET
 	*/
