@@ -1,6 +1,0 @@
-framework module Pods_correct42Tests {
-  umbrella header "Pods-correct42Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

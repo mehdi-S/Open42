@@ -9,7 +9,7 @@ use_frameworks!
 
 
 
-target 'correct42' do
+target 'Open42' do
 	pod 'OAuthSwift', '~> 0.5.0'
 	pod 'Alamofire', '~> 3.3'
 	pod 'Fabric'
@@ -17,11 +17,11 @@ target 'correct42' do
 	pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end
 
-target 'correct42Tests' do
+target 'Open42Tests' do
 	pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end
 
-target 'correct42UITests' do
+target 'Open42UITests' do
 
 end
 
