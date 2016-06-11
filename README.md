@@ -23,12 +23,12 @@ Nous suivons le projet à l'aide de [waffle.io](https://waffle.io/emericspiroux/
 ## Tools et documentation
 
 - [API 42 v2](https://api.intra.42.fr/apidoc/2.0.html)
-- [Alamofire v3.3](https://github.com/Alamofire/Alamofire)
+- [Alamofire v3.4.0](https://github.com/Alamofire/Alamofire)
 - [OAuthSwift v0.5.0](https://github.com/OAuthSwift/OAuthSwift) 
 - [Jazzy v0.6.0](https://github.com/realm/jazzy)
 - [CocoaPods v1.0.0.beta.8](https://guides.cocoapods.org/)
-- [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON.git)
-- [Crashlytics](https://try.crashlytics.com/)
+- [SwiftyJSON v2.3.2](https://github.com/SwiftyJSON/SwiftyJSON.git)
+- [Crashlytics v3.7.1](https://try.crashlytics.com/)
 
 L'ajout de pods est fortement déconseillé sans demande faite au préalable via l'issue correspondante (cf. Suivis de projet).
 
