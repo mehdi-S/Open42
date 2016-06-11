@@ -18,7 +18,7 @@ Application IOS de l'intranet de l'École 42, ouverte à tous les élèves souha
 - Nous ne devrions pas avoir à le préciser mais soyez au fait que tout language ou image relevant de la sexualité, les attaques personnelles, les trolls, les insultes, les harcelements, publier d'autres informations personnelles que son adresse email ainsi que son login 42 sans la permission explicite, toutes choses relevant du non-professionnalisme ainsi que du manque d'éthique, exclurons la contributions et entraînera le bannissement illimité de l'utilisateur. Cependant le reste est encouragé ! :)
 
 ## Suivi de projet
-Nous suivons le projet à l'aide de [waffle.io](https://waffle.io/emericspiroux/Open42), si vous voulez ajouter des issues ou si vous cherchez des idées pour contribuer. Pour résoudre un ticket il suffit de créer une branche sur l'exemple : myTicket-#<id> où <id> est l'id du ticket. Après votre modification, ajoutez une pull request sur le gihub du projet.
+Nous suivons le projet à l'aide de [waffle.io](https://waffle.io/emericspiroux/Open42), si vous voulez ajouter des issues ou si vous cherchez des idées pour contribuer. Pour résoudre un ticket il suffit de créer une branche sur l'exemple : myTicket-#id où id est l'id du ticket. Après votre modification, ajoutez une pull request sur le gihub du projet.
 
 ## Tools et documentation
 
