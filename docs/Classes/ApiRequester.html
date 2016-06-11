@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ApiRequester Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ApiRequester" class="dashAnchor"></a>
+    <a title="ApiRequester Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Open42 Docs</a> (93% documented)</p>
+        <p class="header-right"><a href="https://github.com/emericspiroux/Open42"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Open42 Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ApiRequester Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Achievement.html">Achievement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ApiCredential.html">ApiCredential</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ApiGeneral.html">ApiGeneral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ApiRequester.html">ApiRequester</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Campus.html">Campus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Cursus.html">Cursus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Flag.html">Flag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Language.html">Language</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoginViewController.html">LoginViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProfilViewController.html">ProfilViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Project.html">Project</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProjectTableViewCell.html">ProjectTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProjectsViewController.html">ProjectsViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Scale.html">Scale</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ScaleTeam.html">ScaleTeam</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ScaleTeamTableViewCell.html">ScaleTeamTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ScaleTeamsManager.html">ScaleTeamsManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ScaleTeamsViewController.html">ScaleTeamsViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SearchManager.html">SearchManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SearchUserContainerViewController.html">SearchUserContainerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SearchUserTableViewCell.html">SearchUserTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SearchUserViewController.html">SearchUserViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Skill.html">Skill</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SkillTableViewCell.html">SkillTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SkillsViewController.html">SkillsViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SuperModel.html">SuperModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TabBarViewController.html">TabBarViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Team.html">Team</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TeamUpload.html">TeamUpload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Title.html">Title</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Upload.html">Upload</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/User.html">User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserManager.html">UserManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserViewController.html">UserViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/ScaleTeamsRouter.html">ScaleTeamsRouter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UserRouter.html">UserRouter</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F6Open4218addEventToCalendarFT5titleSS11descriptionGSqSS_9startDateCSo6NSDate7endDateS0_12onCompletionGSqFT7successSb5errorGSqCSo7NSError__T___T_">addEventToCalendar(title:description:startDate:endDate:onCompletion:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F6Open4218showAlertWithTitleFTSS7messageSS4viewCSo16UIViewController_T_">showAlertWithTitle(_:message:view:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ApiRouter.html">ApiRouter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SearchManagerDelegation.html">SearchManagerDelegation</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ApiRequester</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">ApiRequester</span></code></pre>
+
+                </div>
+              </div>
+            <p>Permit request something to API 42 with the help of <code><a href="../Protocols/ApiRouter.html">ApiRouter</a></code></p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Singleton"></a>
+                <a name="//apple_ref/swift/Section/Singleton" class="dashAnchor"></a>
+                <a href="#/Singleton">
+                  <h3 class="section-name">Singleton</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC6Open4212ApiRequester14sharedInstanceS0_"></a>
+                    <a name="//apple_ref/swift/Variable/sharedInstance" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC6Open4212ApiRequester14sharedInstanceS0_">sharedInstance</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">ApiRequester</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC6Open4212ApiRequester6SharedFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/Shared()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC6Open4212ApiRequester6SharedFT_S0_">Shared()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Give the singleton object of the ApiRequester.</p>
+
+<pre class="highlight plaintext"><code>let apiRequester = APIRequester.Shared()
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="kt">Shared</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">ApiRequester</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>static let sharedInstance</code></p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Credentials"></a>
+                <a name="//apple_ref/swift/Section/Credentials" class="dashAnchor"></a>
+                <a href="#/Credentials">
+                  <h3 class="section-name">Credentials</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC6Open4212ApiRequester13apiCredentialCS_13ApiCredential"></a>
+                    <a name="//apple_ref/swift/Property/apiCredential" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC6Open4212ApiRequester13apiCredentialCS_13ApiCredential">apiCredential</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Credential information singleton</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">apiCredential</span> <span class="o">=</span> <span class="kt">ApiCredential</span><span class="o">.</span><span class="kt">Shared</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Methods"></a>
+                <a name="//apple_ref/swift/Section/Methods" class="dashAnchor"></a>
+                <a href="#/Methods">
+                  <h3 class="section-name">Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC6Open4212ApiRequester7requestFTPS_9ApiRouter_7successFV10SwiftyJSON4JSONT_7failureFCSo7NSErrorT__T_"></a>
+                    <a name="//apple_ref/swift/Method/request(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC6Open4212ApiRequester7requestFTPS_9ApiRouter_7successFV10SwiftyJSON4JSONT_7failureFCSo7NSErrorT__T_">request(_:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Send request to api server with an APIRouter inheritance Enum and execute callback.</p>
+
+<pre class="highlight plaintext"><code>let apiRequester = APIRequester.Shared()
+apiRequester.request(UserRouter.Me, success:
+{ (fileContent) in
+    print(fileContent)
+}
+}) { (error) in
+    print(error)
+}
+</code></pre>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>router: ApiRouter protocol. Give the url of the ressource.</li>
+<li>success: CallBack execute if the request success.</li>
+<li>failure: CallBack execute if the request fail.</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">request</span><span class="p">(</span><span class="nv">router</span><span class="p">:</span><span class="kt">ApiRouter</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">(</span><span class="kt">JSON</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:(</span><span class="kt">NSError</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>router</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ApiRouter protocol. Give the url of the ressource.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CallBack execute if the request success.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CallBack execute if the request fail.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC6Open4212ApiRequester10connectApiFTCSo16UIViewController14delegateSafariPSo30SFSafariViewControllerDelegate_7successFT_T_7failureFCSo7NSErrorT__T_"></a>
+                    <a name="//apple_ref/swift/Method/connectApi(_:delegateSafari:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC6Open4212ApiRequester10connectApiFTCSo16UIViewController14delegateSafariPSo30SFSafariViewControllerDelegate_7successFT_T_7failureFCSo7NSErrorT__T_">connectApi(_:delegateSafari:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch api Token by asking it to the user with webview his ids and execute
+corresponding callback.</p>
+
+<pre class="highlight plaintext"><code>let apiRequester = APIRequester.Shared()
+apiRequester.connectApi(self, self, success:
+{ in
+    print("Success !")
+}
+}) { (error) in
+    print(error)
+}
+</code></pre>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>viewController: To perform the segway.</li>
+<li>delegateSafari: To delegate action in a controllers.</li>
+<li>success: CallBack execute if the request success.</li>
+<li>failure: CallBack execute if the request fail.</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">connectApi</span><span class="p">(</span><span class="nv">viewController</span><span class="p">:</span><span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">delegateSafari</span><span class="p">:</span><span class="kt">SFSafariViewControllerDelegate</span><span class="p">,</span> <span class="nv">success</span><span class="p">:(</span><span class="kt">Void</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:(</span><span class="kt">NSError</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewController</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>To perform the segway.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegateSafari</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>To delegate action in a controllers.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CallBack execute if the request success.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CallBack execute if the request fail.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC6Open4212ApiRequester12refreshTokenFFGSqCSo7NSError_T_T_"></a>
+                    <a name="//apple_ref/swift/Method/refreshToken(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC6Open4212ApiRequester12refreshTokenFFGSqCSo7NSError_T_T_">refreshToken(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Refresh api Token and execute callback.</p>
+
+<ul>
+<li>Parameters:</li>
+<li>onCompletion: CallBack execute with nil error if the completion succeeded</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">refreshToken</span><span class="p">(</span><span class="nv">onCompletion</span><span class="p">:(</span><span class="kt">NSError</span><span class="p">?)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC6Open4212ApiRequester13downloadImageFTSS7successFCSo7UIImageT_7failureFCSo7NSErrorT__T_"></a>
+                    <a name="//apple_ref/swift/Method/downloadImage(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC6Open4212ApiRequester13downloadImageFTSS7successFCSo7UIImageT_7failureFCSo7NSErrorT__T_">downloadImage(_:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Download a Picture from an ApiRouter inheritance Enum and execute callback.</p>
+
+<p>let apiRequester = APIRequester.Shared()
+apiRequester.downloadFile(LigandRouter.Representation(<q>NAG</q>), success:
+{ (fileContent) in
+    print(fileContent)
+}
+}) { (error) in
+    print(error)
+}</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>router: ApiRouter protocol. Give the url of the ressource.</li>
+<li>success: CallBack execute if the request success, take String for the content of the File.</li>
+<li>failure: CallBack execute if the request fail.</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">downloadImage</span><span class="p">(</span><span class="nv">imageUrl</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:(</span><span class="kt">UIImage</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:(</span><span class="kt">NSError</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>router</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ApiRouter protocol. Give the url of the ressource.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CallBack execute if the request success, take String for the content of the File.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CallBack execute if the request fail.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC6Open4212ApiRequester12downloadFileFTPS_9ApiRouter_7successFSST_7failureFCSo7NSErrorT__T_"></a>
+                    <a name="//apple_ref/swift/Method/downloadFile(_:success:failure:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC6Open4212ApiRequester12downloadFileFTPS_9ApiRouter_7successFSST_7failureFCSo7NSErrorT__T_">downloadFile(_:success:failure:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Download a file from an ApiRouter inheritance Enum and execute callback.</p>
+
+<p>let apiRequester = APIRequester.Shared()
+apiRequester.downloadFile(LigandRouter.Representation(<q>NAG</q>), success:
+{ (fileContent) in
+    print(fileContent)
+}
+}) { (error) in
+    print(error)
+}</p>
+
+<ul>
+<li>Parameters:
+
+<ul>
+<li>router: ApiRouter protocol. Give the url of the ressource.</li>
+<li>success: CallBack execute if the request success, take String for the content of the File.</li>
+<li>failure: CallBack execute if the request fail.</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">downloadFile</span><span class="p">(</span><span class="nv">router</span><span class="p">:</span><span class="kt">ApiRouter</span><span class="p">,</span> <span class="nv">success</span><span class="p">:(</span><span class="kt">String</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">,</span> <span class="nv">failure</span><span class="p">:(</span><span class="kt">NSError</span><span class="p">)</span><span class="o">-&gt;</span><span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>router</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ApiRouter protocol. Give the url of the ressource.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CallBack execute if the request success, take String for the content of the File.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>CallBack execute if the request fail.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://spiroux-web.fr" target="_blank" rel="external">espiroux</a>. All rights reserved. (Last updated: 2016-06-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.6.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
