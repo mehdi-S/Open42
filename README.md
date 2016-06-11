@@ -28,6 +28,7 @@ Nous suivons le projet à l'aide de [waffle.io](https://waffle.io/emericspiroux/
 - [Jazzy v0.6.0](https://github.com/realm/jazzy)
 - [CocoaPods v1.0.0.beta.8](https://guides.cocoapods.org/)
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON.git)
+- [Crashlytics](https://try.crashlytics.com/)
 
 L'ajout de pods est fortement déconseillé sans demande faite au préalable via l'issue correspondante (cf. Suivis de projet).
 
