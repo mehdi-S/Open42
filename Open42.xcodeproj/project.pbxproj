@@ -69,7 +69,6 @@
 		771D79A79A3DC721752E51F8 /* Pods_Open42UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E29F693D392F9DBAFCEFF2 /* Pods_Open42UITests.framework */; };
 		8F28953DF1D9EAF2EB023A86 /* Pods_Open42.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E282DA0920863E8E2DB53B95 /* Pods_Open42.framework */; };
 		B60C27431EB982CC53DC70F0 /* Pods_correct42UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38DE91D259426C794AA0937A /* Pods_correct42UITests.framework */; };
-		B9746AC7A499CF43FDC0C6C0 /* Pods_correct42.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A732D1AFE4D85890AFF12E /* Pods_correct42.framework */; };
 		CED89C7C1CDB5120001FC0CC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED89C7B1CDB5120001FC0CC /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
@@ -196,7 +195,6 @@
 				CED89C7C1CDB5120001FC0CC /* SwiftyJSON.framework in Frameworks */,
 				46E7895F1CCCFA4A00D4CBE3 /* Alamofire.framework in Frameworks */,
 				46E789601CCCFA4A00D4CBE3 /* OAuthSwift.framework in Frameworks */,
-				B9746AC7A499CF43FDC0C6C0 /* Pods_correct42.framework in Frameworks */,
 				8F28953DF1D9EAF2EB023A86 /* Pods_Open42.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -976,7 +974,7 @@
 				INFOPLIST_FILE = correct42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fr.espiroux.correct42;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.spiroux-web.open42";
 				PRODUCT_NAME = Open42;
 			};
 			name = Debug;
@@ -994,7 +992,7 @@
 				INFOPLIST_FILE = correct42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fr.espiroux.correct42;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.spiroux-web.open42";
 				PRODUCT_NAME = Open42;
 			};
 			name = Release;
