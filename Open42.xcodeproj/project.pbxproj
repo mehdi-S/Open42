@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27D316A4B243CDBE5EFE7CD4 /* Pods_correct42Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D2362D2EFD3B19E5CC5333 /* Pods_correct42Tests.framework */; };
+		462FE1F41D0F07C00034BCD9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462FE1F21D0F07550034BCD9 /* Alamofire.framework */; };
 		4630FCFA1CF3887E00B37031 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630FCF91CF3887E00B37031 /* SearchManager.swift */; };
 		464299951D045C91000E2AC8 /* ApiGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464299941D045C91000E2AC8 /* ApiGeneral.swift */; };
 		464378EB1CFF4D230066F9BC /* usersNameListV1.1.1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 464378EA1CFF4D230066F9BC /* usersNameListV1.1.1.txt */; };
@@ -63,7 +64,6 @@
 		46DA0CD21D0AF809001C92CE /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA0CCE1D0AF809001C92CE /* SkillTableViewCell.swift */; };
 		46DA0CD51D0AF814001C92CE /* searchUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46DA0CD31D0AF814001C92CE /* searchUserCell.xib */; };
 		46DA0CD61D0AF814001C92CE /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA0CD41D0AF814001C92CE /* SearchUserTableViewCell.swift */; };
-		46E7895F1CCCFA4A00D4CBE3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E7895D1CCCFA4A00D4CBE3 /* Alamofire.framework */; };
 		46E789601CCCFA4A00D4CBE3 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E7895E1CCCFA4A00D4CBE3 /* OAuthSwift.framework */; };
 		6D2CF4FB7791A9F8DDEF6487 /* Pods_Open42Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B782B07B246E1F8996245CD /* Pods_Open42Tests.framework */; };
 		771D79A79A3DC721752E51F8 /* Pods_Open42UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E29F693D392F9DBAFCEFF2 /* Pods_Open42UITests.framework */; };
@@ -109,6 +109,7 @@
 		27120044D4B1108C1EB7696E /* Pods-Open42Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open42Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Open42Tests/Pods-Open42Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		385ACC35E6A864D6A4C5C056 /* Pods-Open42UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Open42UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Open42UITests/Pods-Open42UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		38DE91D259426C794AA0937A /* Pods_correct42UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_correct42UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		462FE1F21D0F07550034BCD9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/correct42-aoubocrqlfjigxedszfmnipcrwdw/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		4630FCF91CF3887E00B37031 /* SearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchManager.swift; path = Services/SearchManager.swift; sourceTree = "<group>"; };
 		464299941D045C91000E2AC8 /* ApiGeneral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiGeneral.swift; path = Library/Api/ApiGeneral.swift; sourceTree = "<group>"; };
 		464378EA1CFF4D230066F9BC /* usersNameListV1.1.1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usersNameListV1.1.1.txt; path = Ressources/usersNameListV1.1.1.txt; sourceTree = "<group>"; };
@@ -192,8 +193,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462FE1F41D0F07C00034BCD9 /* Alamofire.framework in Frameworks */,
 				CED89C7C1CDB5120001FC0CC /* SwiftyJSON.framework in Frameworks */,
-				46E7895F1CCCFA4A00D4CBE3 /* Alamofire.framework in Frameworks */,
 				46E789601CCCFA4A00D4CBE3 /* OAuthSwift.framework in Frameworks */,
 				8F28953DF1D9EAF2EB023A86 /* Pods_Open42.framework in Frameworks */,
 			);
@@ -470,6 +471,7 @@
 		A8DDDEA8BFB5A4B034B6E341 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				462FE1F21D0F07550034BCD9 /* Alamofire.framework */,
 				CED89C7B1CDB5120001FC0CC /* SwiftyJSON.framework */,
 				46E7895D1CCCFA4A00D4CBE3 /* Alamofire.framework */,
 				46E7895E1CCCFA4A00D4CBE3 /* OAuthSwift.framework */,
@@ -974,7 +976,7 @@
 				INFOPLIST_FILE = correct42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.spiroux-web.open42";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.espiroux.open42;
 				PRODUCT_NAME = Open42;
 			};
 			name = Debug;
@@ -992,7 +994,7 @@
 				INFOPLIST_FILE = correct42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.spiroux-web.open42";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.espiroux.open42;
 				PRODUCT_NAME = Open42;
 			};
 			name = Release;
