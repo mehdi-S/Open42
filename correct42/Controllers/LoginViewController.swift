@@ -74,11 +74,15 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 	/**
 	Set the `progressBarLogin` progress to 0,
 	check connect() (work at SafariView dissmiss)
-	and set loadingInformationsLabel to ""
+	and set loadingInformationsLabel to "".
 	*/
 	override func viewDidAppear(animated: Bool) {
 		progressBarLogin.progress = 0.0
 		loadingInformationsLabel.text = "Loading profile..."
+		
+		self.progressBarLogin.hidden = true
+		self.button42Login.hidden = false
+		self.LoginLoading.stopAnimating()
 	}
 	
 	// MARK: - SafariView delegate
