@@ -11,14 +11,19 @@ import Alamofire
 /**
 Protocol for Api Routers. Use to get the inherit ressources route.
 */
-protocol ApiRouter {
+public protocol ApiRouter {
 	/**
 	Method of request, can be:
 	
+	.OPTIONS
 	.GET
+	.HEAD
 	.POST
-	.UPDATE
+	.PUT
+	.PATCH
 	.DELETE
+	.TRACE
+	.CONNECT
 	
 	*/
 	var method:Alamofire.Method{get}
@@ -31,7 +36,7 @@ protocol ApiRouter {
 	/**
 	get the parameter of url path in the requested case
 	*/
-	var parameters:String{get}
+	var parameters:[String:AnyObject]?{get}
 	
 	/**
 	get the base of url in the requested case

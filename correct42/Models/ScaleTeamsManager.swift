@@ -62,18 +62,19 @@ class ScaleTeamsManager {
 		- failure: CallBack execute if the request fail.
 	*/
 	func fetchMyScaleTeams(success:([ScaleTeam])->Void, failure:(NSError)->Void){
-		apiRequester.request(ScaleTeamsRouter.Me, success: { (jsonData) in
-			self.list.removeAll()
-			for scaleInfos in jsonData.arrayValue {
-				let scaleTeam = ScaleTeam(jsonFetch: scaleInfos)
-				if (!self.idExist(scaleTeam.id)){
-					self.list.append(scaleTeam)
+		apiRequester.request(ScaleTeamsRouter.Me){ (jsonDataOpt, errorOpt) in
+			if let jsonData = jsonDataOpt {
+				self.list.removeAll()
+				for scaleInfos in jsonData.arrayValue {
+					let scaleTeam = ScaleTeam(jsonFetch: scaleInfos)
+					if (!self.idExist(scaleTeam.id)){
+						self.list.append(scaleTeam)
+					}
 				}
+				success(self.list)
+			} else if let error = errorOpt {
+				failure(error)
 			}
-			success(self.list)
-		}) { (error) in
-			// get local requester if exist else
-			failure(error)
 		}
 	}
 	

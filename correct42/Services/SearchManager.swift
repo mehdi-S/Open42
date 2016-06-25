@@ -144,50 +144,52 @@ class SearchManager {
 	*/
 	func fillUserListFromAPIAtBeginPagetoTheEnd(pageNumber:Int){
 		if let path = dir{
-			apiRequester.request(UserRouter.SearchPage(pageNumber), success: { (jsonData) in
-				if (jsonData.arrayValue.count > 0){
-					for userInfos in jsonData.arrayValue {
-						
-						// Catch information from user
-						let user = User(jsonFetch: userInfos)
-						
-						// Format the Id
-						let userId = ":\(user.id)"
-						
-						// Construct userInfos
-						var userInfos = user.login
-						userInfos.appendContentsOf(userId)
-						print(userInfos)
-						userInfos.appendContentsOf("\n")
-						
-						// Add data to the content file string
-						self.contentFile.appendContentsOf(userInfos)
-						
-						// Add user in listSearchUser array
-						self.listSearchUser.append(user)
-						
-						/**
-						If searchManager have a delegate give the percent progression
-						*/
-						if let delegation = self.delegate {
-							if let delegateCompletionPercent = delegation.searchManager {
-								delegateCompletionPercent(percentOfCompletion: self.knowPercentAlpha(userInfos.lowercaseString.characters.first!))
+			apiRequester.request(UserRouter.SearchPage(pageNumber)){ (jsonDataOpt, errorOpt) in
+				if let jsonData = jsonDataOpt {
+					if (jsonData.arrayValue.count > 0){
+						for userInfos in jsonData.arrayValue {
+							
+							// Catch information from user
+							let user = User(jsonFetch: userInfos)
+							
+							// Format the Id
+							let userId = ":\(user.id)"
+							
+							// Construct userInfos
+							var userInfos = user.login
+							userInfos.appendContentsOf(userId)
+							print(userInfos)
+							userInfos.appendContentsOf("\n")
+							
+							// Add data to the content file string
+							self.contentFile.appendContentsOf(userInfos)
+							
+							// Add user in listSearchUser array
+							self.listSearchUser.append(user)
+							
+							/**
+							If searchManager have a delegate give the percent progression
+							*/
+							if let delegation = self.delegate {
+								if let delegateCompletionPercent = delegation.searchManager {
+									delegateCompletionPercent(percentOfCompletion: self.knowPercentAlpha(userInfos.lowercaseString.characters.first!))
+								}
 							}
 						}
+						// Go to the next page !
+						let nextPageNumber = pageNumber + 1
+						self.fillUserListFromAPIAtBeginPagetoTheEnd(nextPageNumber)
+					} else {
+						do {
+							try self.contentFile.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
+						} catch {
+							print(NSError(domain: "Search Manager", code: -1, userInfo: [1:"error writing User list to file"]))
+						}
+						
 					}
-					// Go to the next page !
-					let nextPageNumber = pageNumber + 1
-					self.fillUserListFromAPIAtBeginPagetoTheEnd(nextPageNumber)
-				} else {
-					do {
-						try self.contentFile.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
-					} catch {
-						print(NSError(domain: "Search Manager", code: -1, userInfo: [1:"error writing User list to file"]))
-					}
-					
+				} else if let error = errorOpt {
+					self.onCompletionHandler(false, NSError(domain: "Search Manager", code: -1, userInfo: [1:"Error loading all the user. Dtails : \(error)."]))
 				}
-			}) { (error) in
-				self.onCompletionHandler(false, NSError(domain: "Search Manager", code: -1, userInfo: [1:"Error loading all the user."]))
 			}
 		} else {
 			self.onCompletionHandler(false, NSError(domain: "Search Manager", code: -1, userInfo: [1:"Error creating 42 users file list."]))

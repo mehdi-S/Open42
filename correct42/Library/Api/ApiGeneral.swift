@@ -37,7 +37,10 @@ class ApiGeneral {
 			print("The request is malformed")
 			break
 		case 401:
-			askNewAuthorize(animate)
+			showAlertWithTitle(title, message: "Token have expired and we can't reconnect.", view: view)
+			if (animate){
+				self.goToLogin()
+			}
 			break
 		case 403:
 			print("Forbidden Request")
@@ -53,33 +56,7 @@ class ApiGeneral {
 			break
 		default:
 			showAlertWithTitle(title, message: "Please check your internet connection and try again.", view: view)
-			if (animate){
-				self.goToLogin()
-			}
 			break
-		}
-	}
-	
-	/**
-	Ask new token to the server when the last one are expirated
-	- Parameter animate: if the login be display on error
-	*/
-	private func askNewAuthorize(animate:Bool){
-		if apiRequester.apiCredential.refrechToken != "" {
-			apiRequester.refreshToken{ errorRequester in
-				if errorRequester != nil {
-					print(errorRequester?.userInfo["message"])
-					self.apiRequester.apiCredential.refrechToken = ""
-					self.apiRequester.apiCredential.token = ""
-					if (animate){
-						self.goToLogin()
-					}
-				} else {
-					return
-				}
-			}
-		} else if animate {
-			goToLogin()
 		}
 	}
 	

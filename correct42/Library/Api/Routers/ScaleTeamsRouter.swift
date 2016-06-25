@@ -41,10 +41,10 @@ enum ScaleTeamsRouter: ApiRouter {
 	/**
 	- default = ""
 	*/
-	var parameters:String{
+	var parameters:[String:AnyObject]?{
 		switch self {
 		default:
-			return ""
+			return nil
 		}
 	}
 	

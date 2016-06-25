@@ -3,14 +3,16 @@ PODS:
   - Crashlytics (3.7.1):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
-  - OAuthSwift (0.5.2)
+  - p2.OAuth2 (2.2.7):
+    - SwiftKeychain (~> 1.0)
+  - SwiftKeychain (1.0.0)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 3.3)
   - Crashlytics
   - Fabric
-  - OAuthSwift (~> 0.5.0)
+  - p2.OAuth2
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
 EXTERNAL SOURCES:
@@ -26,9 +28,10 @@ SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   Crashlytics: 3cdd4c9655be68032a0cf0379e0fb5ef6af22cad
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
-  OAuthSwift: 1ef042d4362e755e24a78f158d817245641a5d24
+  p2.OAuth2: a4391406917fc2a3bb820aec6e1180b8f87321fd
+  SwiftKeychain: fd9ad69f7b3ff7a0c7ba579da508bbaa89a395b2
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: b8c1f66aa85d414e46e37ddd1db6294535db5d8c
+PODFILE CHECKSUM: 7dca290ac16931c7397f89c1610c124d73afa144
 
 COCOAPODS: 1.0.0.beta.8
