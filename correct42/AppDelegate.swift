@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import OAuthSwift
+import p2_OAuth2
 import Fabric
 import Crashlytics
 
@@ -16,7 +16,6 @@ import Crashlytics
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
@@ -46,21 +45,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationWillTerminate(application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
-	
-	func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
-		return (self.applicationHandleOpenURL(url))
-	}
-
 }
 
 extension AppDelegate
 {
-	func applicationHandleOpenURL(url: NSURL) -> Bool {
+	func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
 		if (url.host == "oauth-callback") {
-			OAuthSwift.handleOpenURL(url)
-			return (true)
+			if let vc = window?.rootViewController as? LoginViewController {
+				vc.apiRequester.handleUrl(url)
+				return true
+			}
 		}
-		return (false)
+		return false
 	}
 }
 

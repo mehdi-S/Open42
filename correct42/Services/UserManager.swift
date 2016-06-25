@@ -86,17 +86,17 @@ class UserManager {
 		- failure: CallBack execute if the request fail.
 	*/
 	func fetchMyProfil(success:(User)->Void, failure:(NSError)->Void){
-		apiRequester.request(UserRouter.Me, success: { (jsonData) in
+		apiRequester.request(UserRouter.Me){ (jsonDataOpt, errorOpt) in
+			if let jsonData = jsonDataOpt {
 			self.loginUser = User(jsonFetch: jsonData)
 			if let user = self.loginUser {
 				success(user)
 			} else {
 				failure(NSError(domain: "no user", code: -1, userInfo: nil))
 			}
-			
-			}) { (error) in
-			// get local requester if exist else
-			failure(error)
+			} else if let error = errorOpt {
+				failure(error)
+			}
 		}
 	}
 	
@@ -121,11 +121,12 @@ class UserManager {
 	- failure: CallBack execute if the request fail.
 	*/
 	func fetchUserById(id:Int, success:(User)->Void, failure:(NSError)->Void){
-		apiRequester.request(UserRouter.ReadUser(id), success: { (jsonData) in
-				success(User(jsonFetch: jsonData))
-		}) { (error) in
-			// get local requester if exist else
-			failure(error)
+		apiRequester.request(UserRouter.ReadUser(id)){ (jsonDataOpt, errorOpt) in
+			if let jsonData = jsonDataOpt {
+			success(User(jsonFetch: jsonData))
+			} else if let error = errorOpt {
+				failure(error)
+			}
 		}
 		
 	}

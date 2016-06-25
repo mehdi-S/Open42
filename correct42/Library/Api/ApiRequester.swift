@@ -6,191 +6,176 @@
 //  Copyright © 2016 42. All rights reserved.
 //
 import Alamofire
-import OAuthSwift
 import SwiftyJSON
-import SafariServices
 
-/// Permit request something to API 42 with the help of `ApiRouter`
+/// Permit request something to API with the help of `ApiRouter` and `DataLoader`
 class ApiRequester {
 	
-	// MARK: - Singleton
-	static let sharedInstance = ApiRequester()
+	// MARK: Singleton
+	/// Static Instance of the ApiRequester
+	static let sharedInstance = ApiRequester(dataLoader: DuoQuadraLoader())
 	
 	/**
-	Give the singleton object of the ApiRequester.
+	Give the singleton object of the ApiRequester
 	
 	```
-	let apiRequester = APIRequester.Shared()
+	let apiRequester = ApiRequester.Shared()
 	```
 	
-	- returns: `static let sharedInstance`
+	- returns: `static let instance`
 	*/
 	static func Shared() -> ApiRequester
 	{
 		return (self.sharedInstance)
 	}
 	
-	// MARK: - Credentials
-	/// Credential information singleton
-	lazy var apiCredential = ApiCredential.Shared()
+	/**
+	Protocole use to contact the API.
+	*/
+	var oAuthProtocol:DataLoader?
 	
-	
-	// MARK: - Proprieties
-	/// Client id of Api 42
-	private let clientID = ""//"<Your Client ID>"
-	/// Secret key of Api 42
-	private let secretKey = ""//"<Your Secret Key>"
+	// MARK: - Initializer
+	/**
+	Init with an Data loader to define what kind of domain you want
+	to touch with connect and request credential.
+	*/
+	init(dataLoader:DataLoader){
+		oAuthProtocol = dataLoader
+	}
 	
 	// MARK: - Methods
 	/**
 	Send request to api server with an APIRouter inheritance Enum and execute callback.
 	
 	```
-	let apiRequester = APIRequester.Shared()
-	apiRequester.request(UserRouter.Me, success:
+	let apiRequester = APIRequester(myApiLoader)
+	apiRequester.requestApi(UserRouter.Me, success:
 	{ (fileContent) in
-		print(fileContent)
+	print(fileContent)
 	}
 	}) { (error) in
-		print(error)
+	print(error)
 	}
 	```
 	
 	- Parameters:
-		- router: ApiRouter protocol. Give the url of the ressource.
-		- success: CallBack execute if the request success.
-		- failure: CallBack execute if the request fail.
+	- router: ApiRouter protocol. Give the url of the ressource.
+	- success: CallBack execute if the request success.
+	- failure: CallBack execute if the request fail.
 	*/
-	func request(router:ApiRouter, success: (JSON)->Void, failure:(NSError)->Void)
-	{
+	func request(
+		router:ApiRouter,
+		callback:((JSON?, NSError?)->Void)?
+		){
+		// Show activity indicator.
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		if apiCredential.token != "" {
-		Alamofire.request(router.method, "\(router.baseUrl)\(router.path)\(router.parameters)", headers: ["Authorization":"Bearer \(apiCredential.token)"])
-			.responseJSON{ reply in
-				if let response = reply.response {
-					if let jsonData = reply.result.value{
-						let responseJSON = JSON(jsonData);
-						if (responseJSON["error"].string == nil){
-							success(responseJSON)
-						}
-						else {
-							failure(NSError(domain: "Api 42", code: response.statusCode, userInfo: ["error":responseJSON["error"].stringValue,"message":responseJSON["message"].stringValue]))
-						}
-					} else {
-						failure(NSError(domain: "Api 42", code: -2, userInfo: ["error":"Data Formating Fail"]))
-					}
-				} else {
-					failure(NSError(domain: "Api 42", code: -1, userInfo: ["error":"No Connection"]))
-				}
-				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+		
+		// Check if oAuthProtocol has been implement
+		guard oAuthProtocol != nil else {
+			print("No protocol implemented in ApiRequester().oAuthProtocol")
+			if let callbackUnWrap = callback {
+				callbackUnWrap(nil, NSError(domain: "ApiRequester", code: -1, userInfo: ["error":"No protocol implemented in ApiRequester().oAuthProtocol"]))
 			}
-		} else {
-			// TODO: Change to an normalized error
-			failure(NSError(domain: "Api 42", code: -2, userInfo: ["error":"No Token"]))
-			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+			return
 		}
-	}
-	
-	
-	/**
-	Fetch api Token by asking it to the user with webview his ids and execute
-	corresponding callback.
-	
-	```
-	let apiRequester = APIRequester.Shared()
-	apiRequester.connectApi(self, self, success:
-	{ in
-		print("Success !")
-	}
-	}) { (error) in
-		print(error)
-	}
-	```
-	
-	- Parameters:
-		- viewController: To perform the segway.
-		- delegateSafari: To delegate action in a controllers.
-		- success: CallBack execute if the request success.
-		- failure: CallBack execute if the request fail.
-	*/
-	func connectApi(viewController:UIViewController, delegateSafari:SFSafariViewControllerDelegate, success:(Void)->Void, failure:(NSError)->Void)
-	{
-		let oauthswift = OAuth2Swift(
-			consumerKey: clientID,
-			consumerSecret: secretKey,
-			authorizeUrl:   "https://api.intra.42.fr/oauth/authorize",
-			accessTokenUrl: "https://api.intra.42.fr/oauth/token",
-			responseType:   "code"
-		)
-		let safariView = SafariURLHandler(viewController: viewController)
-		safariView.delegate = delegateSafari
-		oauthswift.authorize_url_handler = safariView
-		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-		oauthswift.authorizeWithCallbackURL(
-			NSURL(string: "correct42://oauth-callback/intra")!,
-			scope: "public", state:"INTRA",
-			success: { credential, response, parameters in
-				self.apiCredential.token = credential.oauth_token
-				self.apiCredential.refrechToken = credential.oauth_refresh_token
-				success()
-				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-			},
-			failure: { error in
-				failure(error)
-				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-			}
-		)
-	}
-	
-	/**
-	Refresh api Token and execute callback.
-	
-	- Parameters:
-	- onCompletion: CallBack execute with nil error if the completion succeeded
-	*/
-	func refreshToken(onCompletion:(NSError?)->Void){
-		if apiCredential.refrechToken != "" {
-			Alamofire.request(.POST, "https://api.intra.42.fr/oauth/token?grant_type=refresh_token&client_id=\(clientID)&client_secret=\(secretKey)&refresh_token=\(apiCredential.refrechToken)&redirect_uri=localhost")
-				.responseJSON{ reply in
-					UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-					if let response = reply.response {
-						if let jsonData = reply.result.value{
-							let responseJSON = JSON(jsonData);
-							if (responseJSON["error"].string == nil){
-								self.apiCredential.refrechToken = responseJSON["refresh_token"].stringValue
-								self.apiCredential.token = responseJSON["access_token"].stringValue
-								onCompletion(nil)
-							}
-							else {
-								onCompletion(NSError(domain: "Api 42", code: response.statusCode, userInfo: ["error":responseJSON["error"].stringValue,"message":responseJSON["message"].stringValue]))
+		
+		// get header or nothing
+		if let hdrs = oAuthProtocol!.getHeadersFromProtocolAuthorizedOrRefreshAndRequest(router, retry: {self.request(router, callback: callback)}) {
+			
+			// Make request
+			Alamofire.request(
+				router.method,
+				"\(router.baseUrl)\(router.path)",
+				parameters: router.parameters,
+				encoding: .URL,
+				headers: hdrs)
+				.responseJSON { reply in
+					if callback != nil {
+						if let response = reply.response {
+							if let jsonData = reply.result.value{
+								let responseJSON = JSON(jsonData);
+								if (responseJSON["error"].string == nil){
+									callback!(responseJSON, nil)
+								}
+								else {
+									callback!(nil, NSError(domain: self.oAuthProtocol!.domain, code: response.statusCode, userInfo: ["error":responseJSON["error"].stringValue,"message":responseJSON["message"].stringValue]))
+								}
+							} else {
+								callback!(nil, NSError(domain: self.oAuthProtocol!.domain, code: -2, userInfo: ["error":"Data Formating Fail"]))
 							}
 						} else {
-							onCompletion(NSError(domain: "Api 42", code: -2, userInfo: ["error":"Data Formating Fail"]))
+							callback!(nil, NSError(domain: self.oAuthProtocol!.domain, code: -1, userInfo: ["error":"No Connection"]))
 						}
-					} else {
-						onCompletion(NSError(domain: "Api 42", code: -1, userInfo: ["error":"No Connection"]))
+						UIApplication.sharedApplication().networkActivityIndicatorVisible = false
 					}
-					UIApplication.sharedApplication().networkActivityIndicatorVisible = false
 			}
 		}
+	}
+	
+	// TODO: Test if it work
+	/**
+	Refresh the token of the oAuthprotocol implemented
+	
+	- Parameter callback: If error exist JSON will be nil. JSON return <#need Completion#>
+	*/
+	func RefreshToken(callback:((JSON?, NSError?)->Void)?){
+		// Show activity indicator.
+		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+		
+		// Check if oAuthProtocol has been implement
+		guard oAuthProtocol != nil else {
+			print("No protocol implemented in ApiRequester().oAuthProtocol")
+			return
+		}
+		
+		oAuthProtocol?.refreshToken({ (json, error) in
+			if let callbackNOpt = callback {
+				callbackNOpt(json, error)
+				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+			}
+		})
+		
+	}
+	
+	/**
+	Connect ApiRequester with api server.
+	
+	- Parameter view: View where oauth perform segue to the safariView.
+	- Parameter onCompletion: Callback call at any completions. String enum case of `ErrorType` from *p2_oAuth2* library
+	*/
+	func connect(viewController:UIViewController?, onCompletion:(wasFailure: Bool, error: ErrorType?) -> Void) {
+		// Show activity indicator.
+		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+		
+		// Check if oAuthProtocol has been implement
+		guard oAuthProtocol != nil else {
+			print("No protocol implemented in ApiRequester().oAuthProtocol")
+			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+			return
+		}
+		
+		oAuthProtocol!.authorize(viewController, callback: { (fail, error) in
+			onCompletion(wasFailure: fail, error: error)
+			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+		})
 	}
 	
 	/**
 	Download a Picture from an ApiRouter inheritance Enum and execute callback.
 	
-	let apiRequester = APIRequester.Shared()
+	let apiRequester = = APIRequester(myApiLoader)
 	apiRequester.downloadFile(LigandRouter.Representation("NAG"), success:
 	{ (fileContent) in
-		print(fileContent)
+	print(fileContent)
 	}
 	}) { (error) in
-		print(error)
+	print(error)
 	}
 	
 	- Parameters:
-		- router: ApiRouter protocol. Give the url of the ressource.
-		- success: CallBack execute if the request success, take String for the content of the File.
-		- failure: CallBack execute if the request fail.
+	- router: ApiRouter protocol. Give the url of the ressource.
+	- success: CallBack execute if the request success, take String for the content of the File.
+	- failure: CallBack execute if the request fail.
 	*/
 	func downloadImage(imageUrl:String, success:(UIImage)->Void, failure:(NSError)->Void){
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -213,19 +198,19 @@ class ApiRequester {
 	/**
 	Download a file from an ApiRouter inheritance Enum and execute callback.
 	
-	let apiRequester = APIRequester.Shared()
+	let apiRequester = APIRequester(myApiLoader)
 	apiRequester.downloadFile(LigandRouter.Representation("NAG"), success:
 	{ (fileContent) in
-		print(fileContent)
+	print(fileContent)
 	}
 	}) { (error) in
-		print(error)
+	print(error)
 	}
 	
 	- Parameters:
-		- router: ApiRouter protocol. Give the url of the ressource.
-		- success: CallBack execute if the request success, take String for the content of the File.
-		- failure: CallBack execute if the request fail.
+	- router: ApiRouter protocol. Give the url of the ressource.
+	- success: CallBack execute if the request success, take String for the content of the File.
+	- failure: CallBack execute if the request fail.
 	*/
 	func downloadFile(router:ApiRouter, success:(String)->Void, failure:(NSError)->Void){
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -242,6 +227,27 @@ class ApiRequester {
 				failure(NSError(domain: "Error on download file", code: -1, userInfo: nil))
 			}
 			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+		}
+	}
+
+	/**
+	Check if `oAuthProtocol` load is authorized or not.
+	- Returns: True if authorized.
+	*/
+	func isAuthorized() -> Bool {
+		if let oauth = oAuthProtocol {
+			return oauth.isAuthorized()
+		}
+		return false
+	}
+	
+	/**
+	Check if `oAuthProtocol` load is authorized or not.
+	- Returns: True if authorized.
+	*/
+	func handleUrl(url:NSURL){
+		if let oauth = oAuthProtocol {
+			oauth.handleRedirectURL(url)
 		}
 	}
 }

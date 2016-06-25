@@ -49,10 +49,12 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 	@IBAction func connect42(sender: UIButton) {
 		LoginLoading.startAnimating()
 		button42Login.hidden = true
-		apiRequester.connectApi(self, delegateSafari: self, success: { () in
-			self.connect()
-		}) { (error) in
-			ApiGeneral(myView: self).check(error, animate: false)
+		apiRequester.connect(self){ (wasFailure, error) in
+			if !wasFailure {
+				self.connect()
+			} else {
+				showAlertWithTitle("Api 42", message: "\(error)", view: self)
+			}
 		}
 	}
 	
@@ -116,15 +118,13 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 	2. Stop animating LoginLoading
 	*/
 	private func connect(){
-		dispatch_async(dispatch_get_main_queue()){
-			if (ApiCredential.Shared().token != ""){
-				self.button42Login.hidden = true
-				self.fetchUser()
-			} else {
-				self.progressBarLogin.hidden = true
-				self.button42Login.hidden = false
-				self.LoginLoading.stopAnimating()
-			}
+		if (self.apiRequester.isAuthorized()){
+			self.button42Login.hidden = true
+			self.fetchUser()
+		} else {
+			self.progressBarLogin.hidden = true
+			self.button42Login.hidden = false
+			self.LoginLoading.stopAnimating()
 		}
 
 	}
@@ -156,6 +156,7 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 	*/
 	private func fetchListUser() { // ~2 min 30.
 		self.progressBarLogin.hidden = false
+		self.button42Login.hidden = true
 		if !searchManager.fileAlreadyExist() {
 			self.loadingInformationsLabel.text = "Loading users list for research more faster than ever...\n(Only happens once a year)"
 			searchManager.fetchAllUsersFromAPI{ (success, error) in

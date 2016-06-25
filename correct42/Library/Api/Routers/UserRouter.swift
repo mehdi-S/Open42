@@ -64,14 +64,14 @@ enum UserRouter: ApiRouter {
 	- .SearchPage = "?page=\(page)&filter=status:admis"
 	- default = ""
 	*/
-	var parameters:String{
+	var parameters:[String:AnyObject]?{
 		switch self {
 		case .Search(let login):
-			return "?search=in:login%20\(login)"
+			return ["search":"in:login%20\(login)"]
 		case .SearchPage(let page):
-			return "?page=\(page)&filter=status:admis"
+			return ["page":"\(page)&filter=status:admis"]
 		default:
-			return ""
+			return nil
 		}
 	}
 	

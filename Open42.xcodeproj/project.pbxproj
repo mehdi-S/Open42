@@ -45,7 +45,6 @@
 		468348261CF85FB400F7C1AD /* Skills.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468348221CF85FB400F7C1AD /* Skills.storyboard */; };
 		468348271CF85FB400F7C1AD /* TabBarView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468348231CF85FB400F7C1AD /* TabBarView.storyboard */; };
 		4683482F1CF8600300F7C1AD /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683482D1CF8600300F7C1AD /* UserManager.swift */; };
-		468348321CF8602200F7C1AD /* ApiCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468348301CF8602200F7C1AD /* ApiCredential.swift */; };
 		468348331CF8602200F7C1AD /* ApiRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468348311CF8602200F7C1AD /* ApiRequester.swift */; };
 		468348351CF8602C00F7C1AD /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468348341CF8602C00F7C1AD /* ApiRouter.swift */; };
 		468348381CF8603500F7C1AD /* ScaleTeamsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468348361CF8603500F7C1AD /* ScaleTeamsRouter.swift */; };
@@ -55,6 +54,9 @@
 		4683B46F1CC26999005DBAA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4683B46D1CC26999005DBAA6 /* LaunchScreen.storyboard */; };
 		4683B47A1CC26999005DBAA6 /* correct42Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683B4791CC26999005DBAA6 /* correct42Tests.swift */; };
 		4683B4851CC26999005DBAA6 /* correct42UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683B4841CC26999005DBAA6 /* correct42UITests.swift */; };
+		4686F87A1D1E97D7001B6DEF /* DuoQuadraLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4686F8791D1E97D7001B6DEF /* DuoQuadraLoader.swift */; };
+		4686F87C1D1E97F6001B6DEF /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4686F87B1D1E97F6001B6DEF /* DataLoader.swift */; };
+		4686F87E1D1EC6BA001B6DEF /* p2_OAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4686F87D1D1EC6BA001B6DEF /* p2_OAuth2.framework */; };
 		469804281CF4DB3C007C2D2B /* SearchManagerDelegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469804271CF4DB3C007C2D2B /* SearchManagerDelegation.swift */; };
 		46AB96D31CE9052E00908F1F /* ScaleTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46AB96D21CE9052E00908F1F /* ScaleTeamCell.xib */; };
 		46AB96D51CE913CE00908F1F /* ScaleTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB96D41CE913CE00908F1F /* ScaleTeamTableViewCell.swift */; };
@@ -64,7 +66,6 @@
 		46DA0CD21D0AF809001C92CE /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA0CCE1D0AF809001C92CE /* SkillTableViewCell.swift */; };
 		46DA0CD51D0AF814001C92CE /* searchUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46DA0CD31D0AF814001C92CE /* searchUserCell.xib */; };
 		46DA0CD61D0AF814001C92CE /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA0CD41D0AF814001C92CE /* SearchUserTableViewCell.swift */; };
-		46E789601CCCFA4A00D4CBE3 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E7895E1CCCFA4A00D4CBE3 /* OAuthSwift.framework */; };
 		6D2CF4FB7791A9F8DDEF6487 /* Pods_Open42Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B782B07B246E1F8996245CD /* Pods_Open42Tests.framework */; };
 		771D79A79A3DC721752E51F8 /* Pods_Open42UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E29F693D392F9DBAFCEFF2 /* Pods_Open42UITests.framework */; };
 		8F28953DF1D9EAF2EB023A86 /* Pods_Open42.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E282DA0920863E8E2DB53B95 /* Pods_Open42.framework */; };
@@ -146,7 +147,6 @@
 		468348221CF85FB400F7C1AD /* Skills.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Skills.storyboard; path = views/Skills.storyboard; sourceTree = "<group>"; };
 		468348231CF85FB400F7C1AD /* TabBarView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TabBarView.storyboard; path = views/TabBarView.storyboard; sourceTree = "<group>"; };
 		4683482D1CF8600300F7C1AD /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserManager.swift; path = Services/UserManager.swift; sourceTree = "<group>"; };
-		468348301CF8602200F7C1AD /* ApiCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiCredential.swift; path = Library/Api/ApiCredential.swift; sourceTree = "<group>"; };
 		468348311CF8602200F7C1AD /* ApiRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRequester.swift; path = Library/Api/ApiRequester.swift; sourceTree = "<group>"; };
 		468348341CF8602C00F7C1AD /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiRouter.swift; path = Library/Api/Routers/Protocols/ApiRouter.swift; sourceTree = "<group>"; };
 		468348361CF8603500F7C1AD /* ScaleTeamsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaleTeamsRouter.swift; path = Library/Api/Routers/ScaleTeamsRouter.swift; sourceTree = "<group>"; };
@@ -162,6 +162,9 @@
 		4683B4801CC26999005DBAA6 /* Open42.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Open42.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4683B4841CC26999005DBAA6 /* correct42UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = correct42UITests.swift; sourceTree = "<group>"; };
 		4683B4861CC26999005DBAA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4686F8791D1E97D7001B6DEF /* DuoQuadraLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DuoQuadraLoader.swift; path = Library/Api/Loaders/DuoQuadraLoader.swift; sourceTree = "<group>"; };
+		4686F87B1D1E97F6001B6DEF /* DataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataLoader.swift; path = Library/Api/Loaders/DataLoader.swift; sourceTree = "<group>"; };
+		4686F87D1D1EC6BA001B6DEF /* p2_OAuth2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = p2_OAuth2.framework; path = "../../../../Library/Developer/Xcode/DerivedData/correct42-aoubocrqlfjigxedszfmnipcrwdw/Build/Products/Release-iphoneos/p2.OAuth2/p2_OAuth2.framework"; sourceTree = "<group>"; };
 		469804271CF4DB3C007C2D2B /* SearchManagerDelegation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchManagerDelegation.swift; path = Services/Delegations/SearchManagerDelegation.swift; sourceTree = "<group>"; };
 		46AB96D21CE9052E00908F1F /* ScaleTeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScaleTeamCell.xib; path = "views/Table Cells/ScalesTeam/ScaleTeamCell.xib"; sourceTree = "<group>"; };
 		46AB96D41CE913CE00908F1F /* ScaleTeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaleTeamTableViewCell.swift; path = "views/Table Cells/ScalesTeam/ScaleTeamTableViewCell.swift"; sourceTree = "<group>"; };
@@ -193,9 +196,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4686F87E1D1EC6BA001B6DEF /* p2_OAuth2.framework in Frameworks */,
 				462FE1F41D0F07C00034BCD9 /* Alamofire.framework in Frameworks */,
 				CED89C7C1CDB5120001FC0CC /* SwiftyJSON.framework in Frameworks */,
-				46E789601CCCFA4A00D4CBE3 /* OAuthSwift.framework in Frameworks */,
 				8F28953DF1D9EAF2EB023A86 /* Pods_Open42.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,7 +265,7 @@
 		4658A4ED1CCFC12A001C0968 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				468348301CF8602200F7C1AD /* ApiCredential.swift */,
+				4686F8741D1E97A0001B6DEF /* Loaders */,
 				468348311CF8602200F7C1AD /* ApiRequester.swift */,
 				4658A4EE1CCFC147001C0968 /* Routers */,
 				464299941D045C91000E2AC8 /* ApiGeneral.swift */,
@@ -431,6 +434,15 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
+		4686F8741D1E97A0001B6DEF /* Loaders */ = {
+			isa = PBXGroup;
+			children = (
+				4686F8791D1E97D7001B6DEF /* DuoQuadraLoader.swift */,
+				4686F87B1D1E97F6001B6DEF /* DataLoader.swift */,
+			);
+			name = Loaders;
+			sourceTree = "<group>";
+		};
 		469804261CF4D956007C2D2B /* delegations */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +483,7 @@
 		A8DDDEA8BFB5A4B034B6E341 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4686F87D1D1EC6BA001B6DEF /* p2_OAuth2.framework */,
 				462FE1F21D0F07550034BCD9 /* Alamofire.framework */,
 				CED89C7B1CDB5120001FC0CC /* SwiftyJSON.framework */,
 				46E7895D1CCCFA4A00D4CBE3 /* Alamofire.framework */,
@@ -791,8 +804,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4686F87C1D1E97F6001B6DEF /* DataLoader.swift in Sources */,
 				4683481F1CF85F8400F7C1AD /* UserViewController.swift in Sources */,
-				468348321CF8602200F7C1AD /* ApiCredential.swift in Sources */,
 				46AB96D51CE913CE00908F1F /* ScaleTeamTableViewCell.swift in Sources */,
 				4683480A1CF85F5D00F7C1AD /* TeamUpload.swift in Sources */,
 				468348331CF8602200F7C1AD /* ApiRequester.swift in Sources */,
@@ -811,6 +824,7 @@
 				468348061CF85F5D00F7C1AD /* ScaleTeamsManager.swift in Sources */,
 				468348011CF85F5D00F7C1AD /* Flag.swift in Sources */,
 				4683480D1CF85F5D00F7C1AD /* User.swift in Sources */,
+				4686F87A1D1E97D7001B6DEF /* DuoQuadraLoader.swift in Sources */,
 				468348391CF8603500F7C1AD /* UserRouter.swift in Sources */,
 				468348041CF85F5D00F7C1AD /* Scale.swift in Sources */,
 				468347FF1CF85F5D00F7C1AD /* Campus.swift in Sources */,

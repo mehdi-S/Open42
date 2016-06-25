@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import p2_OAuth2
 /**
 View who display `UserViewController` in a container from `UserManager.loginUser`
 */
