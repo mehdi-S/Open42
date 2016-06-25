@@ -23,7 +23,7 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
 	
 	/// Lazy array of all projects of `currentUser` sort by Mark
 	lazy var projects:[Project] = {
-		if let cursusProjects = self.currentUser?.cursus.first?.projects{
+		if let cursusProjects = self.currentUser?.projects{
 			return (cursusProjects.sort({ $0.finalMark > $1.finalMark }))
 		}
 		return ([])
