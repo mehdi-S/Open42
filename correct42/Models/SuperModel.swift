@@ -19,6 +19,7 @@ class SuperModel {
 	- Parameter jsonFetch: Any `JSON` object conform to inheritence
 	*/
 	required init(jsonFetch:JSON){
+		print(jsonFetch)
 		jsonData = jsonFetch
 	}
 }

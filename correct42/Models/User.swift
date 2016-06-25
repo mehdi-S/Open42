@@ -93,7 +93,7 @@ class User : SuperModel {
 	/// Array of `Cursus`.
 	lazy var cursus:[Cursus] = {
 		var cursusGet = [Cursus]()
-		for cursus in self.jsonData["cursus"].arrayValue {
+		for cursus in self.jsonData["cursus_users"].arrayValue {
 			cursusGet.append(Cursus(jsonFetch: cursus))
 		}
 		return (cursusGet)
@@ -138,10 +138,19 @@ class User : SuperModel {
 	/// Array of `Campus` where the user be registred.
 	lazy var campus:[Campus] = {
 		var campusGet = [Campus]()
-		for campus in self.jsonData["Campus"].arrayValue{
+		for campus in self.jsonData["campus"].arrayValue{
 			campusGet.append(Campus(jsonFetch: campus))
 		}
 		return (campusGet)
+	}()
+	
+	/// Array of `Projects` where the user be registred.
+	lazy var projects:[Project] = {
+		var projectGet = [Project]()
+		for project in self.jsonData["projects_users"].arrayValue{
+			projectGet.append(Project(jsonFetch: project))
+		}
+		return (projectGet)
 	}()
 	
 	// MARK: - Initialisers

@@ -52,20 +52,6 @@ class Cursus : SuperModel {
 	}()
 	
 	// MARK: - Array
-	/** 
-	list of projects
-	Can be fill by:
-	- All projects in a given user's Cursus
-	- All projects in a given cursus
-	*/
-	lazy var projects:[Project] = {
-			var projectGet = [Project]()
-			for project in self.jsonData["projects"].arrayValue{
-				projectGet.append(Project(jsonFetch: project))
-			}
-			return (projectGet)
-	}()
-	
 	/**
 	list of skills
 	Can be fill by:
