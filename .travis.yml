@@ -3,9 +3,6 @@ osx_image: xcode7.3
 xcode_project: Correct42.xcodeproj
 xcode_scheme: Open42
 xcode_sdk: iphonesimulator
-env:
-  global:
-    secure: yTJ34JFkaocYdz8QATK6ffImZR1MlRQB/ZKw+DGA9LUAooKxtkZMRkNPt6MKqCWW2cAS1zby4I89Ongj+EzLZ2tU9mOZfM7BqDl00qQqxQHfS5ljFgn/ZTKptCareirXcUKFIxfgxsGt8jPCm+CCYhfcWECjOMY3FcuWV2Tn7lMtN4pE22afC5kxkY3NSJr63XSMkqCoF69qjkBjtd8q/pMBdvnA0V6gDhTCs3a6KBI5u6tedyCg7JirornxyHzIIpLNVpBihnPGTu36qgTd/A0O4Unm2zvL6AKJZEPSVwuDkQBBdWSOg3Q023rFenwSVaCaCppkbjMYK+m3jXYDc8oIxNkT0EFUJ4JF41YmfAqb3wsQ3y9J+5SlOBWzvRzAdZx8ZD+3jCk8slVzYg5eFKh3l3eLF8YQBb/pyMfxa51In/6egIHYM4Eo31v3S29gAqojUHGu2VRHGrdYNlpeELQypec4nMpI4vFskWlx/BTonUD4ITuEWYYuP27+eowWX0Fl/LaljIze70RpSneAr/i6NB8633VXa7y3tucJQWdSEd/W5Db2XmLiZjkla10GFeb/f+peEPPH6bjlhunsACUI54HGfnQufCdfelUIbqeQeeCLJbRpU1u/iPNv5OmRg+lmX9yoZ5md2JjXB1iknQbLBbLAAzm4d9Vqv6FKRoY=
 script:
 - set -o pipefail
 - COMMAND="xcodebuild -workspace Correct42.xcworkspace -scheme Open42 -destination \"platform=IOS Simulator,name=iPhone 6s,OS=9.3\""
