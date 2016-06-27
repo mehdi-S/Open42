@@ -69,7 +69,11 @@ enum UserRouter: ApiRouter {
 		case .Search(let login):
 			return ["search":"in:login%20\(login)"]
 		case .SearchPage(let page):
-			return ["page":"\(page)&filter=status:admis"]
+			return [
+						"page":"\(page)",
+						"sort":"login",
+						"per_page":30
+					]
 		default:
 			return nil
 		}

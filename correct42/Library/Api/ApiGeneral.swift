@@ -55,6 +55,7 @@ class ApiGeneral {
 			showAlertWithTitle(title, message: "We have some problem with the api server, please try again later.", view: view)
 			break
 		default:
+			print(nsError)
 			showAlertWithTitle(title, message: "Please check your internet connection and try again.", view: view)
 			break
 		}

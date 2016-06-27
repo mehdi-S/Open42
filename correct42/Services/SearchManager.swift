@@ -58,7 +58,7 @@ class SearchManager {
 	lazy var apiRequester = ApiRequester.Shared()
 	
 	/// Constante of the file name
-	let nameFile = "usersNameListV1.1.1"
+	let nameFile = "usersNameListV1.2.1"
 	
 	/// Content file of the file at `pathFile`
 	var contentFile = ""
@@ -72,7 +72,13 @@ class SearchManager {
 	
 	/// Fetch directory of the user list file
 	lazy var dir:String? = {
-		return (NSBundle.mainBundle().pathForResource(self.nameFile, ofType: "txt"))
+		if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true){
+			var dir = dirs[0]
+			dir.appendContentsOf(self.nameFile)
+			return (dir)
+			
+		}
+		return (nil)
 	}()
 
 	/// Lazy Boolean checking if the users are already fetch
@@ -143,6 +149,7 @@ class SearchManager {
 		- pageNumber : First page of the request
 	*/
 	func fillUserListFromAPIAtBeginPagetoTheEnd(pageNumber:Int){
+		let page = pageNumber
 		if let path = dir{
 			apiRequester.request(UserRouter.SearchPage(pageNumber)){ (jsonDataOpt, errorOpt) in
 				if let jsonData = jsonDataOpt {
@@ -177,8 +184,7 @@ class SearchManager {
 							}
 						}
 						// Go to the next page !
-						let nextPageNumber = pageNumber + 1
-						self.fillUserListFromAPIAtBeginPagetoTheEnd(nextPageNumber)
+						self.fillUserListFromAPIAtBeginPagetoTheEnd(page + 1)
 					} else {
 						do {
 							try self.contentFile.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
@@ -257,8 +263,12 @@ class SearchManager {
 	/// To know percent compared to the letter in alphabet
 	private func knowPercentAlpha(letter:Character) -> Int{
 		let asciiInt = letter.unicodeScalarCodePoint()
-		let percent = (asciiInt - 97) * 100 / 25
-		return (Int(percent))
+		
+		if (asciiInt >= 97 && asciiInt <= 122){
+			let percent = (asciiInt - 97) * 100 / 25
+			return (Int(percent))
+		}
+		return (0)
 	}
 }
 
