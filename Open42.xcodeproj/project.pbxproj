@@ -11,7 +11,7 @@
 		462FE1F41D0F07C00034BCD9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462FE1F21D0F07550034BCD9 /* Alamofire.framework */; };
 		4630FCFA1CF3887E00B37031 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630FCF91CF3887E00B37031 /* SearchManager.swift */; };
 		464299951D045C91000E2AC8 /* ApiGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464299941D045C91000E2AC8 /* ApiGeneral.swift */; };
-		464378EB1CFF4D230066F9BC /* usersNameListV1.1.1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 464378EA1CFF4D230066F9BC /* usersNameListV1.1.1.txt */; };
+		464378EB1CFF4D230066F9BC /* usersNameListV1.2.1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 464378EA1CFF4D230066F9BC /* usersNameListV1.2.1.txt */; };
 		4648C9A31CC6A9F700E82D68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4648C9A21CC6A9F700E82D68 /* AppDelegate.swift */; };
 		4658A4FB1CD0FDFB001C0968 /* ApiCredentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658A4FA1CD0FDFB001C0968 /* ApiCredentialTests.swift */; };
 		468347ED1CF769D900F7C1AD /* addEventToCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347EC1CF769D900F7C1AD /* addEventToCalendar.swift */; };
@@ -113,7 +113,7 @@
 		462FE1F21D0F07550034BCD9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/correct42-aoubocrqlfjigxedszfmnipcrwdw/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		4630FCF91CF3887E00B37031 /* SearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchManager.swift; path = Services/SearchManager.swift; sourceTree = "<group>"; };
 		464299941D045C91000E2AC8 /* ApiGeneral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiGeneral.swift; path = Library/Api/ApiGeneral.swift; sourceTree = "<group>"; };
-		464378EA1CFF4D230066F9BC /* usersNameListV1.1.1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usersNameListV1.1.1.txt; path = Ressources/usersNameListV1.1.1.txt; sourceTree = "<group>"; };
+		464378EA1CFF4D230066F9BC /* usersNameListV1.2.1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usersNameListV1.2.1.txt; path = Ressources/usersNameListV1.2.1.txt; sourceTree = "<group>"; };
 		4648C9A21CC6A9F700E82D68 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = correct42/AppDelegate.swift; sourceTree = "<group>"; };
 		4658A4FA1CD0FDFB001C0968 /* ApiCredentialTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiCredentialTests.swift; path = Library/ApiCredentialTests.swift; sourceTree = "<group>"; };
 		468347EC1CF769D900F7C1AD /* addEventToCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addEventToCalendar.swift; path = Helpers/addEventToCalendar.swift; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 		464378E91CFF4CC10066F9BC /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
-				464378EA1CFF4D230066F9BC /* usersNameListV1.1.1.txt */,
+				464378EA1CFF4D230066F9BC /* usersNameListV1.2.1.txt */,
 			);
 			name = Ressources;
 			sourceTree = "<group>";
@@ -636,7 +636,7 @@
 				46DA0CD51D0AF814001C92CE /* searchUserCell.xib in Resources */,
 				4683B46F1CC26999005DBAA6 /* LaunchScreen.storyboard in Resources */,
 				46DA0CCF1D0AF809001C92CE /* projectCell.xib in Resources */,
-				464378EB1CFF4D230066F9BC /* usersNameListV1.1.1.txt in Resources */,
+				464378EB1CFF4D230066F9BC /* usersNameListV1.2.1.txt in Resources */,
 				4683B46C1CC26999005DBAA6 /* Assets.xcassets in Resources */,
 				46AB96D31CE9052E00908F1F /* ScaleTeamCell.xib in Resources */,
 				46DA0CD11D0AF809001C92CE /* skillCell.xib in Resources */,
@@ -973,6 +973,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
