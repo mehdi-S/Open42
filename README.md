@@ -1,4 +1,4 @@
-# Open42 [![Stories in Ready](https://badge.waffle.io/emericspiroux/Open42.png?label=ready&title=Ready)](https://waffle.io/emericspiroux/Open42)
+# Open42 [![Stories in Ready](https://badge.waffle.io/emericspiroux/Open42.png?label=ready&title=Ready)](https://waffle.io/emericspiroux/Open42) ![Status Api 42](http://statusbadge.spiroux-web.fr/api42/badge)
 
 Application IOS de l'intranet de l'École 42, ouverte à tous les élèves souhaitant contribuer. Application basée sur l'API 42.
 
