@@ -51,6 +51,12 @@ class Project : SuperModel{
 		return (self.jsonData["retriable_at"].stringValue)
 	}()
 	
+	// MARK: - Bool
+	/// Set at True if the project is validate
+	lazy var validated:Bool = {
+		return (self.jsonData["validated?"].boolValue)
+	}()
+	
 	// MARK: - Array
 	/// Id of each try teams.
 	lazy var teamsIds:[Int] = {
@@ -66,4 +72,30 @@ class Project : SuperModel{
 	lazy var currentTeam:Team = {
 		return (Team(jsonFetch: self.jsonData["current_team"]))
 	}()
+	
+	// MARK: - Enum
+	lazy var status:ProjectStatus = {
+		let status = self.jsonData["status"].stringValue
+		switch status {
+		case "finished":
+			return (.finished)
+		case "in_progress":
+			return (.inProgress)
+		case "waiting_for_correction":
+			return (.waitingForCorrection)
+		case "waiting_to_start":
+			return (.waitingToStart)
+		default:
+			return (.none)
+		}
+	}()
+	
+}
+
+public enum ProjectStatus {
+	case finished
+	case inProgress
+	case waitingForCorrection
+	case waitingToStart
+	case none
 }

@@ -112,17 +112,23 @@ class ProjectsViewController: UIViewController, UITableViewDelegate, UITableView
 			}
 			return (nil)
 		}()
-		projectCellPrototype!.markLabel.text = "\(projects[indexPath.row].finalMark) %"
 		
-		if (projects[indexPath.row].finalMark >= 50){
-			projectCellPrototype!.markLabel.textColor = UIColor.greenDarkColor()
+		if projects[indexPath.row].status == ProjectStatus.finished {
+			projectCellPrototype!.markLabel.text = "\(projects[indexPath.row].finalMark) %"
+			
+			if (projects[indexPath.row].validated){
+				projectCellPrototype!.markLabel.textColor = UIColor.greenDarkColor()
+			} else {
+				projectCellPrototype!.markLabel.textColor = UIColor.redDarkColor()
+			}
 		} else {
-			projectCellPrototype!.markLabel.textColor = UIColor.redDarkColor()
+			projectCellPrototype!.markLabel.text = "-"
+			projectCellPrototype!.markLabel.textColor = UIColor.orangeColor()
 		}
 		projectCellPrototype!.projectNameLabel.text = projects[indexPath.row].slug.stringByReplacingOccurrencesOfString("-", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil).capitalizedString
-			return (projectCellPrototype!)
+		return (projectCellPrototype!)
 	}
-
+	
 }
 
 /// extension UIColor to define color extensions
@@ -135,5 +141,23 @@ private extension UIColor {
 	/// return a little bit dark red `UIColor`
 	static func redDarkColor() -> UIColor{
 		return (UIColor(red: 0.6, green: 0.0, blue: 0.0, alpha: 1.0))
+	}
+	
+	/// return a little bit dark red `UIColor`
+	static func orangeColor() -> UIColor{
+		return (UIColor.fromRGB(0xFFA500))
+	}
+}
+
+import UIKit
+
+extension UIColor {
+	static func fromRGB(rgbValue: UInt) -> UIColor {
+		return UIColor(
+			red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+			green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+			blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+			alpha: CGFloat(1.0)
+		)
 	}
 }
