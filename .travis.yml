@@ -4,7 +4,5 @@ xcode_project: Correct42.xcodeproj
 xcode_scheme: Open42
 xcode_sdk: iphonesimulator
 script:
-- set -o pipefail
-- COMMAND="xcodebuild -workspace Correct42.xcworkspace -scheme Open42 -destination \"platform=IOS Simulator,name=iPhone 6s,OS=9.3\""
-- eval $COMMAND clean build
-- eval $COMMAND test | xcpretty
+- xcodebuild -workspace Correct42.xcworkspace -scheme Open42 -destination "platform=IOS Simulator,name=iPhone 6s,OS=9.3" clean build
+- xcodebuild -workspace Correct42.xcworkspace -scheme Open42 -destination "platform=IOS Simulator,name=iPhone 6s,OS=9.3" test | xcpretty
