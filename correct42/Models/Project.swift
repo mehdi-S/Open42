@@ -33,7 +33,7 @@ class Project : SuperModel{
 	// MARK: - String
 	/// Name of the project.
 	lazy var name:String = {
-		return (self.jsonData["name"].stringValue)
+		return (self.jsonData["project"]["name"].stringValue)
 	}()
 	
 	/// Register Date.
@@ -43,7 +43,7 @@ class Project : SuperModel{
 	
 	/// Slug Name (Full name example: "Piscine-Cpp-D00_Date").
 	lazy var slug:String = {
-		return (self.jsonData["slug"].stringValue)
+		return (self.jsonData["project"]["slug"].stringValue)
 	}()
 	
 	/// Retriable Date.

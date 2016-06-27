@@ -90,7 +90,6 @@ class DuoQuadraLoader : DataLoader {
 			if isAuthorized(){
 				// Add Access token to the request's headers
 				if let token = oAuth2CodeGrant.accessToken {
-					print("Add header")
 					hdrs!["Authorization"] = "Bearer \(token)"
 				}
 			} else {
@@ -101,7 +100,7 @@ class DuoQuadraLoader : DataLoader {
 			}
 			return hdrs
 		}
-		print ("No DataLoader implemented in Peliloader")
+		print ("No DataLoader implemented in DuoquadraLoader")
 		return nil
 	}
 	
