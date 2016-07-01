@@ -991,7 +991,7 @@
 				INFOPLIST_FILE = correct42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fr.espiroux.open42;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.spiroux-web.open42";
 				PRODUCT_NAME = Open42;
 			};
 			name = Debug;
@@ -1009,7 +1009,7 @@
 				INFOPLIST_FILE = correct42/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fr.espiroux.open42;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.spiroux-web.open42";
 				PRODUCT_NAME = Open42;
 			};
 			name = Release;

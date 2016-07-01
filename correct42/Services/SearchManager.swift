@@ -72,11 +72,14 @@ class SearchManager {
 	
 	/// Fetch directory of the user list file
 	lazy var dir:String? = {
-		if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true){
-			var dir = dirs[0]
-			dir.appendContentsOf(self.nameFile)
-			return (dir)
-			
+		if let handlefile =  NSBundle.mainBundle().pathForResource(self.nameFile, ofType: "txt") {
+			return handlefile
+		} else {
+			if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true){
+				var dir = dirs[0]
+				dir.appendContentsOf("/\(self.nameFile).txt")
+				return (dir)
+			}
 		}
 		return (nil)
 	}()
@@ -84,6 +87,7 @@ class SearchManager {
 	/// Lazy Boolean checking if the users are already fetch
 	func fileAlreadyExist() -> Bool {
 		if let path = self.dir {
+			print(path)
 			return NSFileManager().fileExistsAtPath(path)
 		}
 		else {
