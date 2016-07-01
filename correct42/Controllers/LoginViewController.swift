@@ -161,7 +161,9 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 			self.loadingInformationsLabel.text = "Loading users list for research more faster than ever...\n(Only happens once a year)"
 			searchManager.fetchAllUsersFromAPI{ (success, error) in
 				if (success){
-					self.performSegueWithIdentifier("connectSegue", sender: self)
+					dispatch_async(dispatch_get_main_queue(), {
+						self.performSegueWithIdentifier("connectSegue", sender: self)
+					})
 				} else {
 					ApiGeneral(myView: self).check(error, animate: false)
 				}
@@ -174,7 +176,9 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 			self.loadingInformationsLabel.text = "Loading users list..."
 			searchManager.fetchUsersFromFile({ (success, error) in
 				if (success){
-					self.performSegueWithIdentifier("connectSegue", sender: self)
+					dispatch_async(dispatch_get_main_queue(), {
+						self.performSegueWithIdentifier("connectSegue", sender: self)
+					})
 				} else {
 					ApiGeneral(myView: self).check(error, animate: false)
 				}
