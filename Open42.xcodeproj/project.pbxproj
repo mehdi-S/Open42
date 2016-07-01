@@ -14,6 +14,8 @@
 		464378EB1CFF4D230066F9BC /* usersNameListV1.1.1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 464378EA1CFF4D230066F9BC /* usersNameListV1.1.1.txt */; };
 		4648C9A31CC6A9F700E82D68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4648C9A21CC6A9F700E82D68 /* AppDelegate.swift */; };
 		4658A4FB1CD0FDFB001C0968 /* ApiCredentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658A4FA1CD0FDFB001C0968 /* ApiCredentialTests.swift */; };
+		467826741D26BDEB0087E97A /* Pods_Open42Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467826721D26BDEB0087E97A /* Pods_Open42Tests.framework */; };
+		467826751D26BDEB0087E97A /* Pods_Open42UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467826731D26BDEB0087E97A /* Pods_Open42UITests.framework */; };
 		468347ED1CF769D900F7C1AD /* addEventToCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347EC1CF769D900F7C1AD /* addEventToCalendar.swift */; };
 		468347FE1CF85F5D00F7C1AD /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347EE1CF85F5D00F7C1AD /* Achievement.swift */; };
 		468347FF1CF85F5D00F7C1AD /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347EF1CF85F5D00F7C1AD /* Campus.swift */; };
@@ -116,6 +118,8 @@
 		464378EA1CFF4D230066F9BC /* usersNameListV1.1.1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usersNameListV1.1.1.txt; path = Ressources/usersNameListV1.1.1.txt; sourceTree = "<group>"; };
 		4648C9A21CC6A9F700E82D68 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = correct42/AppDelegate.swift; sourceTree = "<group>"; };
 		4658A4FA1CD0FDFB001C0968 /* ApiCredentialTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiCredentialTests.swift; path = Library/ApiCredentialTests.swift; sourceTree = "<group>"; };
+		467826721D26BDEB0087E97A /* Pods_Open42Tests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Open42Tests.framework; path = "Pods/../build/Debug-iphoneos/Pods_Open42Tests.framework"; sourceTree = "<group>"; };
+		467826731D26BDEB0087E97A /* Pods_Open42UITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Open42UITests.framework; path = "Pods/../build/Debug-iphoneos/Pods_Open42UITests.framework"; sourceTree = "<group>"; };
 		468347EC1CF769D900F7C1AD /* addEventToCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addEventToCalendar.swift; path = Helpers/addEventToCalendar.swift; sourceTree = "<group>"; };
 		468347EE1CF85F5D00F7C1AD /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Achievement.swift; path = Models/Achievement.swift; sourceTree = "<group>"; };
 		468347EF1CF85F5D00F7C1AD /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Campus.swift; path = Models/Campus.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				467826741D26BDEB0087E97A /* Pods_Open42Tests.framework in Frameworks */,
+				467826751D26BDEB0087E97A /* Pods_Open42UITests.framework in Frameworks */,
 				4686F87E1D1EC6BA001B6DEF /* p2_OAuth2.framework in Frameworks */,
 				462FE1F41D0F07C00034BCD9 /* Alamofire.framework in Frameworks */,
 				CED89C7C1CDB5120001FC0CC /* SwiftyJSON.framework in Frameworks */,
@@ -320,7 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				4683B4631CC26999005DBAA6 /* Open42 */,
-				4683B4781CC26999005DBAA6 /* correct42Tests */,
+				4683B4781CC26999005DBAA6 /* Open42Tests */,
 				4683B4831CC26999005DBAA6 /* correct42UITests */,
 				4683B4621CC26999005DBAA6 /* Products */,
 				A8DDDEA8BFB5A4B034B6E341 /* Frameworks */,
@@ -354,15 +360,16 @@
 			path = correct42;
 			sourceTree = "<group>";
 		};
-		4683B4781CC26999005DBAA6 /* correct42Tests */ = {
+		4683B4781CC26999005DBAA6 /* Open42Tests */ = {
 			isa = PBXGroup;
 			children = (
 				4658A4F91CD0FDA8001C0968 /* Library */,
 				4683B4791CC26999005DBAA6 /* correct42Tests.swift */,
 				4683B47B1CC26999005DBAA6 /* Info.plist */,
 			);
+			name = Open42Tests;
 			path = correct42Tests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		4683B4831CC26999005DBAA6 /* correct42UITests */ = {
 			isa = PBXGroup;
@@ -483,6 +490,8 @@
 		A8DDDEA8BFB5A4B034B6E341 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				467826721D26BDEB0087E97A /* Pods_Open42Tests.framework */,
+				467826731D26BDEB0087E97A /* Pods_Open42UITests.framework */,
 				4686F87D1D1EC6BA001B6DEF /* p2_OAuth2.framework */,
 				462FE1F21D0F07550034BCD9 /* Alamofire.framework */,
 				CED89C7B1CDB5120001FC0CC /* SwiftyJSON.framework */,
