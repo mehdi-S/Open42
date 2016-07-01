@@ -87,7 +87,6 @@ class SearchManager {
 	/// Lazy Boolean checking if the users are already fetch
 	func fileAlreadyExist() -> Bool {
 		if let path = self.dir {
-			print(path)
 			return NSFileManager().fileExistsAtPath(path)
 		}
 		else {
