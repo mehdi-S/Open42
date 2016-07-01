@@ -80,7 +80,7 @@ class ApiRequester {
 		}
 		
 		// get header or nothing
-		if let hdrs = oAuthProtocol!.getHeadersFromProtocolAuthorizedOrRefreshAndRequest(router, retry: {self.request(router, callback: callback)}) {
+		if let hdrs = oAuthProtocol!.getHeadersFromProtocolAuthorizedOrRefreshAndRequest(router, didFail: callback, retry: {self.request(router, callback: callback)}) {
 			
 			// Make request
 			Alamofire.request(

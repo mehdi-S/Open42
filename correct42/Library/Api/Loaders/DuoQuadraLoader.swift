@@ -11,6 +11,12 @@ import p2_OAuth2
 import SwiftyJSON
 
 class DuoQuadraLoader : DataLoader {
+	
+	/// Current number of retry
+	var numberRefreshTriedAfterFail = 0
+	/// Number of retry max before throw an error
+	var numberRefreshTriedAfterFailMax = 1
+	
 	/**
 	OAuth2 Mod.
 	Can be Any type of oAuth2.
@@ -84,17 +90,25 @@ class DuoQuadraLoader : DataLoader {
 	- oAuthModule:
 	- Returns: dictionnary headers of `oAuthProtocol` for `OAuth2PasswordGrant` type.
 	*/
-	func getHeadersFromProtocolAuthorizedOrRefreshAndRequest(router:ApiRouter, retry: (()->Void)?) -> [String:String]?{
+	func getHeadersFromProtocolAuthorizedOrRefreshAndRequest(router:ApiRouter, didFail: ((JSON?, NSError?)->Void)?, retry: (()->Void)?) -> [String:String]?{
 		if let oAuth2CodeGrant = oauth2 as? OAuth2CodeGrant {
 			var hdrs:[String:String]? = [:]
 			if isAuthorized(){
+				numberRefreshTriedAfterFail = 0
 				// Add Access token to the request's headers
 				if let token = oAuth2CodeGrant.accessToken {
 					hdrs!["Authorization"] = "Bearer \(token)"
 				}
 			} else {
-				if let callbackNOpt = retry {
-					callbackNOpt()
+				if (numberRefreshTriedAfterFail < numberRefreshTriedAfterFailMax){
+					numberRefreshTriedAfterFail += 1
+					if let callbackNOpt = retry {
+						callbackNOpt()
+					}
+				} else {
+					if let didFailNOpt = didFail {
+						didFailNOpt(nil, NSError(domain: self.domain, code: 401, userInfo: ["error":"Forbidden", "message":"Refresh token impossible"]))
+					}
 				}
 				return nil
 			}

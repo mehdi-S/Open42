@@ -50,7 +50,7 @@ public protocol DataLoader {
 	Return authorization Header in a new dictionnary from protocol.
 	Check if token is expired and if it is refresh and try again with the callback.
 	*/
-	func getHeadersFromProtocolAuthorizedOrRefreshAndRequest(router:ApiRouter, retry: (()->Void)?) -> [String:String]?
+	func getHeadersFromProtocolAuthorizedOrRefreshAndRequest(router:ApiRouter, didFail: ((JSON?, NSError?)->Void)?, retry: (()->Void)?) -> [String:String]?
 }
 
 
