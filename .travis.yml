@@ -4,5 +4,5 @@ xcode_project: Open42.xcodeproj
 xcode_scheme: Open42
 xcode_sdk: iphonesimulator
 script:
-- xcodebuild -workspace Open42.xcworkspace -scheme Open42 -destination "platform=IOS Simulator,name=iPhone 6s,OS=9.3" clean build
-- xcodebuild -workspace Open42.xcworkspace -scheme Open42 -destination "platform=IOS Simulator,name=iPhone 6s,OS=9.3" test | xcpretty
+- xcodebuild -workspace Open42.xcworkspace -scheme Open42 -destination "platform=IOS Simulator,name=iPhone 6s,OS=9.0" clean build
+- xcodebuild -workspace Open42.xcworkspace -scheme Open42 -destination "platform=IOS Simulator,name=iPhone 6s,OS=9.0" test | xcpretty
