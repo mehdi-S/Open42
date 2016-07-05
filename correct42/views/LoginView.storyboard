@@ -85,8 +85,11 @@
                                     <constraint firstItem="HpR-7G-0qN" firstAttribute="top" secondItem="9uZ-cx-zfC" secondAttribute="top" constant="40" id="sod-yB-hYB"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="espiroux - 42 - 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T0-dg-NCI">
-                                <rect key="frame" x="240" y="559" width="121" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="espiroux - 42 - 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T0-dg-NCI">
+                                <rect key="frame" x="20" y="559" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7Jo-UZ-IrN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.98410964012145996" blue="0.9953608512878418" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -98,9 +101,12 @@
                             <constraint firstAttribute="trailing" secondItem="9uZ-cx-zfC" secondAttribute="trailing" id="CqW-HY-SyN"/>
                             <constraint firstItem="RRc-Rx-pkd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="O8Z-7Z-mFL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RRc-Rx-pkd" secondAttribute="trailing" constant="-20" id="W51-BC-B16"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3T0-dg-NCI" secondAttribute="bottom" constant="20" id="baH-nt-EJU"/>
+                            <constraint firstItem="3T0-dg-NCI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cUe-0G-xoK"/>
                             <constraint firstItem="9uZ-cx-zfC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dIo-fl-uSd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RRc-Rx-pkd" secondAttribute="bottom" id="nY4-Ka-FIC"/>
                             <constraint firstItem="9uZ-cx-zfC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q3H-jo-FCl"/>
+                            <constraint firstItem="3T0-dg-NCI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rY9-dC-mu2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8Eo-RQ-5hu"/>
