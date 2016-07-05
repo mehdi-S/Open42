@@ -69,25 +69,13 @@
                                             <constraint firstAttribute="width" constant="205" id="LSm-n8-mMm"/>
                                         </constraints>
                                     </progressView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bêta" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2r-OI-ETp">
-                                        <rect key="frame" x="237" y="101" width="126" height="16"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="126" id="fg7-oT-Seu"/>
-                                            <constraint firstAttribute="height" constant="16" id="tko-Mw-fLs"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="1" green="0.98410964012145996" blue="0.9953608512878418" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Kan-CK-uRh" firstAttribute="centerY" secondItem="9uZ-cx-zfC" secondAttribute="centerY" constant="79.5" id="4sW-k3-gaJ"/>
                                     <constraint firstItem="bjT-tq-8PA" firstAttribute="centerX" secondItem="9uZ-cx-zfC" secondAttribute="centerX" id="6Sh-ID-Iwk"/>
                                     <constraint firstItem="EY5-aI-4Re" firstAttribute="top" secondItem="bjT-tq-8PA" secondAttribute="bottom" constant="13" id="7hU-io-DY0"/>
-                                    <constraint firstItem="U2r-OI-ETp" firstAttribute="top" secondItem="9uZ-cx-zfC" secondAttribute="top" constant="101" id="929-v0-1Kp"/>
                                     <constraint firstItem="1Za-PB-xXa" firstAttribute="top" secondItem="EY5-aI-4Re" secondAttribute="bottom" constant="14" id="CJ8-G7-otR"/>
-                                    <constraint firstItem="U2r-OI-ETp" firstAttribute="centerX" secondItem="9uZ-cx-zfC" secondAttribute="centerX" id="Ggn-D4-rkY"/>
                                     <constraint firstItem="HpR-7G-0qN" firstAttribute="centerX" secondItem="9uZ-cx-zfC" secondAttribute="centerX" id="Qwd-NA-XP3"/>
                                     <constraint firstAttribute="height" constant="326" id="WZB-T4-2sD"/>
                                     <constraint firstItem="EY5-aI-4Re" firstAttribute="centerX" secondItem="9uZ-cx-zfC" secondAttribute="centerX" id="kKi-ju-hY6"/>
@@ -97,6 +85,12 @@
                                     <constraint firstItem="HpR-7G-0qN" firstAttribute="top" secondItem="9uZ-cx-zfC" secondAttribute="top" constant="40" id="sod-yB-hYB"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="espiroux - 42 - 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T0-dg-NCI">
+                                <rect key="frame" x="240" y="559" width="121" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.98410964012145996" blue="0.9953608512878418" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
