@@ -60,9 +60,11 @@ class ScaleTeamsViewController: UIViewController, UITableViewDelegate, UITableVi
 		scaleTeamsTable.addSubview(refreshControl)
     }
 	
+	/// Ending refresh control
 	override func viewWillDisappear(animated: Bool) {
 		refreshControl.endRefreshing()
 	}
+	
 	// MARK: - IBActions
 	/// Add all scales team in default iphone calendar
 	@IBAction func addToCalendarAction(sender: UIBarButtonItem) {
