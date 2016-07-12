@@ -26,17 +26,25 @@ class FriendTableViewCell: UITableViewCell {
 			if let phoneNumberURL = NSURL(string: "tel://\(phoneNumber)"){
 				UIApplication.sharedApplication().openURL(phoneNumberURL)
 			}
+		} else {
+			if let view = viewOpt {
+				showAlertWithTitle("Open 42 SMS", message: "Le numéro n'est pas disponible ou dans un format inconnu.", view: view)
+			}
 		}
 	}
 
 	@IBAction func smsAction(sender: UIButton) {
 		if let phoneNumber = formatPhoneNumber(), let view = viewOpt {
 			let messageVC = MFMessageComposeViewController()
-			messageVC.body = "Salutation,";
+			messageVC.body = "";
 			messageVC.recipients = [phoneNumber]
 			messageVC.messageComposeDelegate = view;
 			if messageVC.canBecomeFirstResponder() {
 				view.presentViewController(messageVC, animated: true, completion: nil)
+			}
+		} else {
+			if let view = viewOpt {
+				showAlertWithTitle("Open 42 SMS", message: "Le numéro n'est pas disponible ou dans un format inconnu.", view: view)
 			}
 		}
 	}
@@ -86,7 +94,7 @@ class FriendTableViewCell: UITableViewCell {
 	
 	// MARK: - Private methods
 	private func formatPhoneNumber() -> String?{
-		if var phoneNumber = cellFriendOpt?.phoneNumber {
+		if var phoneNumber = cellFriendOpt?.phoneNumber where cellFriendOpt?.phoneNumber != "" {
 			phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString("(", withString: "")
 			phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString(")", withString: "")
 			phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString("-", withString: "")

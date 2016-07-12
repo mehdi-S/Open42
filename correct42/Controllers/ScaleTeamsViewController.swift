@@ -22,7 +22,14 @@ class ScaleTeamsViewController: UIViewController, UITableViewDelegate, UITableVi
 	/// Name of the custom cell call by the `scaleTeamsTable`
 	var cellName = "ScaleTeamCell"
 	/// RefreshControl of the `scaleTeamsTable`
-	let refreshControl = UIRefreshControl()
+	lazy var refreshControl:UIRefreshControl = {
+		// Add Refresh control on `scaleTeamsTable`
+		let lazyRefreshControl = UIRefreshControl()
+		lazyRefreshControl.attributedTitle = NSAttributedString(string: "Refresh corrections", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+		lazyRefreshControl.addTarget(self, action: #selector(self.pullRefreshAction), forControlEvents: UIControlEvents.ValueChanged)
+		lazyRefreshControl.tintColor = UIColor.whiteColor()
+		return lazyRefreshControl
+	}()
 
 	// MARK: - Singletons
 	/// Singleton of `ScaleTeamsManager`
@@ -50,21 +57,21 @@ class ScaleTeamsViewController: UIViewController, UITableViewDelegate, UITableVi
 		scaleTeamsTable.registerNib(nib, forCellReuseIdentifier: cellName)
 		scaleTeamsTable.delegate = self
 		scaleTeamsTable.dataSource = self
-		
-		// Add Refresh control on `scaleTeamsTable`
-		refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-		refreshControl.addTarget(self, action: #selector(self.pullRefreshAction), forControlEvents: UIControlEvents.ValueChanged)
-		refreshControl.tintColor = UIColor.whiteColor()
 		scaleTeamsTable.addSubview(refreshControl)
     }
 	
 	// MARK: - IBActions
+	/// Add all scales team in default iphone calendar
 	@IBAction func addToCalendarAction(sender: UIBarButtonItem) {
 		let alert = UIAlertController(title: "Corrections", message: "Do you want to add Scale teams to your calendar ?", preferredStyle: .ActionSheet)
 		alert.addAction(UIAlertAction(title: "Do it !", style: .Default, handler: { (alertAction) in
-			self.scaleTeamsManager.addScaleTeamsToCalendar({ error in
-				showAlertWithTitle("Scale Calendar", message: error.userInfo[0]!.debugDescription, view: self)
-			})
+			if self.scaleTeamsManager.list.count > 0 {
+				self.scaleTeamsManager.addScaleTeamsToCalendar({ error in
+					showAlertWithTitle("Scale Calendar", message: error.userInfo[0]!.debugDescription, view: self)
+				})
+			} else {
+				showAlertWithTitle("Scale Calendar", message: "You don't have corrections", view: self)
+			}
 		}))
 		alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
 		self.presentViewController(alert, animated: true, completion: nil)
@@ -163,6 +170,7 @@ class ScaleTeamsViewController: UIViewController, UITableViewDelegate, UITableVi
 		return (UITableViewCell())
 	}
 	
+	/// Refresh scales team in tableview. Use for the pull-to-refresh action
 	func pullRefreshAction(){
 		scaleTeamsManager.fetchMyScaleTeams({ (_) in
 			self.scaleTeamsTable.reloadData()
