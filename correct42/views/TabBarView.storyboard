@@ -70,7 +70,7 @@
             </objects>
             <point key="canvasLocation" x="2268" y="1167"/>
         </scene>
-        <!--Profil-->
+        <!--Profile-->
         <scene sceneID="pdA-Pg-EK6">
             <objects>
                 <viewController storyboardIdentifier="ProfilVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EPC-Gr-Nqb" customClass="ProfilViewController" customModule="Open42" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,7 +97,7 @@
                             <constraint firstItem="H5d-aY-k2y" firstAttribute="bottom" secondItem="yoh-8P-Kf7" secondAttribute="top" id="yxY-Jr-PMt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profil" image="ic_account_circle_white" id="1eM-NH-IU4"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="ic_account_circle_white" id="1eM-NH-IU4"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
@@ -183,17 +183,17 @@
                         <viewControllerLayoutGuide type="bottom" id="PFL-y2-L9r"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UwT-Pj-0Us">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAg-5E-0Kr">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="qEG-1Y-kyE">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBh-A0-a0Q">
-                                        <rect key="frame" x="0.0" y="427" width="300" height="60"/>
+                                        <rect key="frame" x="0.0" y="491" width="300" height="60"/>
                                         <color key="backgroundColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.0078431372549019607" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Iug-LM-eY5"/>
@@ -206,7 +206,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5t-jy-bse">
-                                        <rect key="frame" x="300" y="427" width="300" height="60"/>
+                                        <rect key="frame" x="300" y="491" width="300" height="60"/>
                                         <color key="backgroundColor" red="0.0078431372550000003" green="0.0078431372550000003" blue="0.0078431372550000003" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="b5j-b7-Xlt"/>
@@ -219,10 +219,10 @@
                                         </connections>
                                     </button>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOY-on-q7p">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="427"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="491"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdP-Vo-vss" userLabel="Content view">
-                                                <rect key="frame" x="0.0" y="-32" width="600" height="551"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email :   " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPe-iP-j7N">
                                                         <rect key="frame" x="8" y="276" width="288" height="21"/>
@@ -630,7 +630,7 @@
         <image name="ic_group_add" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="h5l-sx-m2K"/>
         <segue reference="Dlh-pB-ELa"/>
-        <segue reference="htO-Rb-Nyt"/>
     </inferredMetricsTieBreakers>
 </document>
