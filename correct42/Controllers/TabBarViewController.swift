@@ -42,11 +42,11 @@ class TabBarViewController: UITabBarController{
 			case items[0]:
 				self.userManager.currentUser = self.userManager.loginUser
 				break
-			case items[1]:
-				self.userManager.currentUser = self.userManager.searchUser
-				break
 			case items[2]:
 				self.userManager.currentUser = self.userManager.correctionUser
+				break
+			case items[3]:
+				self.userManager.currentUser = self.userManager.searchUser
 				break
 			default:
 				self.userManager.currentUser = self.userManager.loginUser
