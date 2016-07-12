@@ -10,27 +10,36 @@
 		27D316A4B243CDBE5EFE7CD4 /* Pods_correct42Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D2362D2EFD3B19E5CC5333 /* Pods_correct42Tests.framework */; };
 		462FE1F41D0F07C00034BCD9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462FE1F21D0F07550034BCD9 /* Alamofire.framework */; };
 		4630FCFA1CF3887E00B37031 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630FCF91CF3887E00B37031 /* SearchManager.swift */; };
+		463445C21D3123C800308A70 /* FriendsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445C11D3123C800308A70 /* FriendsManager.swift */; };
+		463445C41D31245B00308A70 /* ScaleTeamsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445C31D31245B00308A70 /* ScaleTeamsManager.swift */; };
+		463445D51D31248800308A70 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445C51D31248800308A70 /* Achievement.swift */; };
+		463445D61D31248800308A70 /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445C61D31248800308A70 /* Campus.swift */; };
+		463445D71D31248800308A70 /* Cursus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445C71D31248800308A70 /* Cursus.swift */; };
+		463445D81D31248800308A70 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445C81D31248800308A70 /* Flag.swift */; };
+		463445D91D31248800308A70 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445C91D31248800308A70 /* Language.swift */; };
+		463445DA1D31248800308A70 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445CA1D31248800308A70 /* Project.swift */; };
+		463445DB1D31248800308A70 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445CB1D31248800308A70 /* Scale.swift */; };
+		463445DC1D31248800308A70 /* ScaleTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445CC1D31248800308A70 /* ScaleTeam.swift */; };
+		463445DE1D31248800308A70 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445CE1D31248800308A70 /* Skill.swift */; };
+		463445DF1D31248800308A70 /* SuperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445CF1D31248800308A70 /* SuperModel.swift */; };
+		463445E01D31248800308A70 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445D01D31248800308A70 /* Team.swift */; };
+		463445E11D31248800308A70 /* TeamUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445D11D31248800308A70 /* TeamUpload.swift */; };
+		463445E21D31248800308A70 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445D21D31248800308A70 /* Title.swift */; };
+		463445E31D31248800308A70 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445D31D31248800308A70 /* Upload.swift */; };
+		463445E41D31248800308A70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445D41D31248800308A70 /* User.swift */; };
+		463445E71D31262800308A70 /* FriendsDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 463445E51D31262800308A70 /* FriendsDB.xcdatamodeld */; };
+		463445FC1D312BB900308A70 /* UserLocal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445F81D312BB900308A70 /* UserLocal+CoreDataProperties.swift */; };
+		463445FD1D312BB900308A70 /* UserLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445F91D312BB900308A70 /* UserLocal.swift */; };
+		463445FF1D312BB900308A70 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463445FB1D312BB900308A70 /* Friend.swift */; };
+		463446051D31356500308A70 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463446041D31356500308A70 /* Friend+CoreDataProperties.swift */; };
+		463446081D31535800308A70 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463446071D31535800308A70 /* FriendTableViewCell.swift */; };
+		4634460A1D31545300308A70 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 463446091D31545300308A70 /* FriendCell.xib */; };
+		463446101D315C8D00308A70 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4634460F1D315C8D00308A70 /* FriendViewController.swift */; };
 		464299951D045C91000E2AC8 /* ApiGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464299941D045C91000E2AC8 /* ApiGeneral.swift */; };
 		464378EB1CFF4D230066F9BC /* usersNameListV1.2.1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 464378EA1CFF4D230066F9BC /* usersNameListV1.2.1.txt */; };
 		4648C9A31CC6A9F700E82D68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4648C9A21CC6A9F700E82D68 /* AppDelegate.swift */; };
 		4658A4FB1CD0FDFB001C0968 /* ApiCredentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658A4FA1CD0FDFB001C0968 /* ApiCredentialTests.swift */; };
 		468347ED1CF769D900F7C1AD /* addEventToCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347EC1CF769D900F7C1AD /* addEventToCalendar.swift */; };
-		468347FE1CF85F5D00F7C1AD /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347EE1CF85F5D00F7C1AD /* Achievement.swift */; };
-		468347FF1CF85F5D00F7C1AD /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347EF1CF85F5D00F7C1AD /* Campus.swift */; };
-		468348001CF85F5D00F7C1AD /* Cursus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347F01CF85F5D00F7C1AD /* Cursus.swift */; };
-		468348011CF85F5D00F7C1AD /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347F11CF85F5D00F7C1AD /* Flag.swift */; };
-		468348021CF85F5D00F7C1AD /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347F21CF85F5D00F7C1AD /* Language.swift */; };
-		468348031CF85F5D00F7C1AD /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347F31CF85F5D00F7C1AD /* Project.swift */; };
-		468348041CF85F5D00F7C1AD /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347F41CF85F5D00F7C1AD /* Scale.swift */; };
-		468348051CF85F5D00F7C1AD /* ScaleTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347F51CF85F5D00F7C1AD /* ScaleTeam.swift */; };
-		468348061CF85F5D00F7C1AD /* ScaleTeamsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347F61CF85F5D00F7C1AD /* ScaleTeamsManager.swift */; };
-		468348071CF85F5D00F7C1AD /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347F71CF85F5D00F7C1AD /* Skill.swift */; };
-		468348081CF85F5D00F7C1AD /* SuperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347F81CF85F5D00F7C1AD /* SuperModel.swift */; };
-		468348091CF85F5D00F7C1AD /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347F91CF85F5D00F7C1AD /* Team.swift */; };
-		4683480A1CF85F5D00F7C1AD /* TeamUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347FA1CF85F5D00F7C1AD /* TeamUpload.swift */; };
-		4683480B1CF85F5D00F7C1AD /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347FB1CF85F5D00F7C1AD /* Title.swift */; };
-		4683480C1CF85F5D00F7C1AD /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347FC1CF85F5D00F7C1AD /* Upload.swift */; };
-		4683480D1CF85F5D00F7C1AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468347FD1CF85F5D00F7C1AD /* User.swift */; };
 		468348171CF85F8400F7C1AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683480E1CF85F8400F7C1AD /* LoginViewController.swift */; };
 		468348181CF85F8400F7C1AD /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4683480F1CF85F8400F7C1AD /* ProfilViewController.swift */; };
 		468348191CF85F8400F7C1AD /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468348101CF85F8400F7C1AD /* ProjectsViewController.swift */; };
@@ -112,27 +121,36 @@
 		38DE91D259426C794AA0937A /* Pods_correct42UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_correct42UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462FE1F21D0F07550034BCD9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/correct42-aoubocrqlfjigxedszfmnipcrwdw/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		4630FCF91CF3887E00B37031 /* SearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchManager.swift; path = Services/SearchManager.swift; sourceTree = "<group>"; };
+		463445C11D3123C800308A70 /* FriendsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsManager.swift; path = Services/FriendsManager.swift; sourceTree = "<group>"; };
+		463445C31D31245B00308A70 /* ScaleTeamsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaleTeamsManager.swift; path = Services/ScaleTeamsManager.swift; sourceTree = "<group>"; };
+		463445C51D31248800308A70 /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Achievement.swift; path = Models/42Api/Achievement.swift; sourceTree = "<group>"; };
+		463445C61D31248800308A70 /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Campus.swift; path = Models/42Api/Campus.swift; sourceTree = "<group>"; };
+		463445C71D31248800308A70 /* Cursus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cursus.swift; path = Models/42Api/Cursus.swift; sourceTree = "<group>"; };
+		463445C81D31248800308A70 /* Flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flag.swift; path = Models/42Api/Flag.swift; sourceTree = "<group>"; };
+		463445C91D31248800308A70 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Language.swift; path = Models/42Api/Language.swift; sourceTree = "<group>"; };
+		463445CA1D31248800308A70 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.swift; path = Models/42Api/Project.swift; sourceTree = "<group>"; };
+		463445CB1D31248800308A70 /* Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scale.swift; path = Models/42Api/Scale.swift; sourceTree = "<group>"; };
+		463445CC1D31248800308A70 /* ScaleTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaleTeam.swift; path = Models/42Api/ScaleTeam.swift; sourceTree = "<group>"; };
+		463445CE1D31248800308A70 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Skill.swift; path = Models/42Api/Skill.swift; sourceTree = "<group>"; };
+		463445CF1D31248800308A70 /* SuperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuperModel.swift; path = Models/42Api/SuperModel.swift; sourceTree = "<group>"; };
+		463445D01D31248800308A70 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Team.swift; path = Models/42Api/Team.swift; sourceTree = "<group>"; };
+		463445D11D31248800308A70 /* TeamUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamUpload.swift; path = Models/42Api/TeamUpload.swift; sourceTree = "<group>"; };
+		463445D21D31248800308A70 /* Title.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Title.swift; path = Models/42Api/Title.swift; sourceTree = "<group>"; };
+		463445D31D31248800308A70 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Models/42Api/Upload.swift; sourceTree = "<group>"; };
+		463445D41D31248800308A70 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/42Api/User.swift; sourceTree = "<group>"; };
+		463445E61D31262800308A70 /* FriendsDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendsDB.xcdatamodel; sourceTree = "<group>"; };
+		463445F81D312BB900308A70 /* UserLocal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserLocal+CoreDataProperties.swift"; path = "Models/Local/UserLocal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		463445F91D312BB900308A70 /* UserLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserLocal.swift; path = Models/Local/UserLocal.swift; sourceTree = "<group>"; };
+		463445FB1D312BB900308A70 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Friend.swift; path = Models/Local/Friend.swift; sourceTree = "<group>"; };
+		463446041D31356500308A70 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Friend+CoreDataProperties.swift"; path = "Models/Local/Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		463446071D31535800308A70 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendTableViewCell.swift; path = "views/Table Cells/Friend/FriendTableViewCell.swift"; sourceTree = "<group>"; };
+		463446091D31545300308A70 /* FriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FriendCell.xib; path = "views/Table Cells/Friend/FriendCell.xib"; sourceTree = "<group>"; };
+		4634460F1D315C8D00308A70 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendViewController.swift; path = Controllers/FriendViewController.swift; sourceTree = "<group>"; };
 		464299941D045C91000E2AC8 /* ApiGeneral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiGeneral.swift; path = Library/Api/ApiGeneral.swift; sourceTree = "<group>"; };
 		464378EA1CFF4D230066F9BC /* usersNameListV1.2.1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usersNameListV1.2.1.txt; path = Ressources/usersNameListV1.2.1.txt; sourceTree = "<group>"; };
 		4648C9A21CC6A9F700E82D68 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = correct42/AppDelegate.swift; sourceTree = "<group>"; };
 		4658A4FA1CD0FDFB001C0968 /* ApiCredentialTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiCredentialTests.swift; path = Library/ApiCredentialTests.swift; sourceTree = "<group>"; };
 		468347EC1CF769D900F7C1AD /* addEventToCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addEventToCalendar.swift; path = Helpers/addEventToCalendar.swift; sourceTree = "<group>"; };
-		468347EE1CF85F5D00F7C1AD /* Achievement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Achievement.swift; path = Models/Achievement.swift; sourceTree = "<group>"; };
-		468347EF1CF85F5D00F7C1AD /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Campus.swift; path = Models/Campus.swift; sourceTree = "<group>"; };
-		468347F01CF85F5D00F7C1AD /* Cursus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cursus.swift; path = Models/Cursus.swift; sourceTree = "<group>"; };
-		468347F11CF85F5D00F7C1AD /* Flag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flag.swift; path = Models/Flag.swift; sourceTree = "<group>"; };
-		468347F21CF85F5D00F7C1AD /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Language.swift; path = Models/Language.swift; sourceTree = "<group>"; };
-		468347F31CF85F5D00F7C1AD /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Project.swift; path = Models/Project.swift; sourceTree = "<group>"; };
-		468347F41CF85F5D00F7C1AD /* Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scale.swift; path = Models/Scale.swift; sourceTree = "<group>"; };
-		468347F51CF85F5D00F7C1AD /* ScaleTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaleTeam.swift; path = Models/ScaleTeam.swift; sourceTree = "<group>"; };
-		468347F61CF85F5D00F7C1AD /* ScaleTeamsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScaleTeamsManager.swift; path = Models/ScaleTeamsManager.swift; sourceTree = "<group>"; };
-		468347F71CF85F5D00F7C1AD /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Skill.swift; path = Models/Skill.swift; sourceTree = "<group>"; };
-		468347F81CF85F5D00F7C1AD /* SuperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuperModel.swift; path = Models/SuperModel.swift; sourceTree = "<group>"; };
-		468347F91CF85F5D00F7C1AD /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Team.swift; path = Models/Team.swift; sourceTree = "<group>"; };
-		468347FA1CF85F5D00F7C1AD /* TeamUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamUpload.swift; path = Models/TeamUpload.swift; sourceTree = "<group>"; };
-		468347FB1CF85F5D00F7C1AD /* Title.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Title.swift; path = Models/Title.swift; sourceTree = "<group>"; };
-		468347FC1CF85F5D00F7C1AD /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Models/Upload.swift; sourceTree = "<group>"; };
-		468347FD1CF85F5D00F7C1AD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		4683480E1CF85F8400F7C1AD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
 		4683480F1CF85F8400F7C1AD /* ProfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilViewController.swift; path = Controllers/ProfilViewController.swift; sourceTree = "<group>"; };
 		468348101CF85F8400F7C1AD /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectsViewController.swift; path = Controllers/ProjectsViewController.swift; sourceTree = "<group>"; };
@@ -227,11 +245,55 @@
 		462BAFE61CD6261A000F9F34 /* Table Cells */ = {
 			isa = PBXGroup;
 			children = (
+				463446061D31532300308A70 /* Friend */,
 				46AB96D11CE904FF00908F1F /* Scale Teams */,
 				46DA0CC91D0AF706001C92CE /* User Profil */,
 				46DA0CCA1D0AF731001C92CE /* User Search */,
 			);
 			name = "Table Cells";
+			sourceTree = "<group>";
+		};
+		463445BA1D311F9C00308A70 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				463446041D31356500308A70 /* Friend+CoreDataProperties.swift */,
+				463445F81D312BB900308A70 /* UserLocal+CoreDataProperties.swift */,
+				463445F91D312BB900308A70 /* UserLocal.swift */,
+				463445FB1D312BB900308A70 /* Friend.swift */,
+				463445E51D31262800308A70 /* FriendsDB.xcdatamodeld */,
+			);
+			name = Local;
+			sourceTree = "<group>";
+		};
+		463445BB1D311FB200308A70 /* Api42 */ = {
+			isa = PBXGroup;
+			children = (
+				463445C51D31248800308A70 /* Achievement.swift */,
+				463445C61D31248800308A70 /* Campus.swift */,
+				463445C71D31248800308A70 /* Cursus.swift */,
+				463445C81D31248800308A70 /* Flag.swift */,
+				463445C91D31248800308A70 /* Language.swift */,
+				463445CA1D31248800308A70 /* Project.swift */,
+				463445CB1D31248800308A70 /* Scale.swift */,
+				463445CC1D31248800308A70 /* ScaleTeam.swift */,
+				463445CE1D31248800308A70 /* Skill.swift */,
+				463445CF1D31248800308A70 /* SuperModel.swift */,
+				463445D01D31248800308A70 /* Team.swift */,
+				463445D11D31248800308A70 /* TeamUpload.swift */,
+				463445D21D31248800308A70 /* Title.swift */,
+				463445D31D31248800308A70 /* Upload.swift */,
+				463445D41D31248800308A70 /* User.swift */,
+			);
+			name = Api42;
+			sourceTree = "<group>";
+		};
+		463446061D31532300308A70 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				463446071D31535800308A70 /* FriendTableViewCell.swift */,
+				463446091D31545300308A70 /* FriendCell.xib */,
+			);
+			name = Friend;
 			sourceTree = "<group>";
 		};
 		464378E91CFF4CC10066F9BC /* Ressources */ = {
@@ -376,21 +438,8 @@
 		4683B4921CC27336005DBAA6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				468347EE1CF85F5D00F7C1AD /* Achievement.swift */,
-				468347EF1CF85F5D00F7C1AD /* Campus.swift */,
-				468347F01CF85F5D00F7C1AD /* Cursus.swift */,
-				468347F11CF85F5D00F7C1AD /* Flag.swift */,
-				468347F21CF85F5D00F7C1AD /* Language.swift */,
-				468347F31CF85F5D00F7C1AD /* Project.swift */,
-				468347F41CF85F5D00F7C1AD /* Scale.swift */,
-				468347F51CF85F5D00F7C1AD /* ScaleTeam.swift */,
-				468347F71CF85F5D00F7C1AD /* Skill.swift */,
-				468347F81CF85F5D00F7C1AD /* SuperModel.swift */,
-				468347F91CF85F5D00F7C1AD /* Team.swift */,
-				468347FA1CF85F5D00F7C1AD /* TeamUpload.swift */,
-				468347FB1CF85F5D00F7C1AD /* Title.swift */,
-				468347FC1CF85F5D00F7C1AD /* Upload.swift */,
-				468347FD1CF85F5D00F7C1AD /* User.swift */,
+				463445BB1D311FB200308A70 /* Api42 */,
+				463445BA1D311F9C00308A70 /* Local */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -407,6 +456,7 @@
 				468348141CF85F8400F7C1AD /* SkillsViewController.swift */,
 				468348151CF85F8400F7C1AD /* TabBarViewController.swift */,
 				468348161CF85F8400F7C1AD /* UserViewController.swift */,
+				4634460F1D315C8D00308A70 /* FriendViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -429,7 +479,8 @@
 				469804261CF4D956007C2D2B /* delegations */,
 				4630FCF91CF3887E00B37031 /* SearchManager.swift */,
 				4683482D1CF8600300F7C1AD /* UserManager.swift */,
-				468347F61CF85F5D00F7C1AD /* ScaleTeamsManager.swift */,
+				463445C31D31245B00308A70 /* ScaleTeamsManager.swift */,
+				463445C11D3123C800308A70 /* FriendsManager.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -640,6 +691,7 @@
 				4683B46C1CC26999005DBAA6 /* Assets.xcassets in Resources */,
 				46AB96D31CE9052E00908F1F /* ScaleTeamCell.xib in Resources */,
 				46DA0CD11D0AF809001C92CE /* skillCell.xib in Resources */,
+				4634460A1D31545300308A70 /* FriendCell.xib in Resources */,
 				468348271CF85FB400F7C1AD /* TabBarView.storyboard in Resources */,
 				468348251CF85FB400F7C1AD /* Projects.storyboard in Resources */,
 				468348261CF85FB400F7C1AD /* Skills.storyboard in Resources */,
@@ -804,48 +856,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				463445E71D31262800308A70 /* FriendsDB.xcdatamodeld in Sources */,
+				463445E21D31248800308A70 /* Title.swift in Sources */,
 				4686F87C1D1E97F6001B6DEF /* DataLoader.swift in Sources */,
 				4683481F1CF85F8400F7C1AD /* UserViewController.swift in Sources */,
 				46AB96D51CE913CE00908F1F /* ScaleTeamTableViewCell.swift in Sources */,
-				4683480A1CF85F5D00F7C1AD /* TeamUpload.swift in Sources */,
+				463445DF1D31248800308A70 /* SuperModel.swift in Sources */,
+				463446081D31535800308A70 /* FriendTableViewCell.swift in Sources */,
+				463445DC1D31248800308A70 /* ScaleTeam.swift in Sources */,
 				468348331CF8602200F7C1AD /* ApiRequester.swift in Sources */,
 				4630FCFA1CF3887E00B37031 /* SearchManager.swift in Sources */,
+				463445E01D31248800308A70 /* Team.swift in Sources */,
 				468348191CF85F8400F7C1AD /* ProjectsViewController.swift in Sources */,
+				463445D61D31248800308A70 /* Campus.swift in Sources */,
 				46DA0CD61D0AF814001C92CE /* SearchUserTableViewCell.swift in Sources */,
 				464299951D045C91000E2AC8 /* ApiGeneral.swift in Sources */,
-				4683480B1CF85F5D00F7C1AD /* Title.swift in Sources */,
 				4683481E1CF85F8400F7C1AD /* TabBarViewController.swift in Sources */,
-				468348071CF85F5D00F7C1AD /* Skill.swift in Sources */,
+				463445FF1D312BB900308A70 /* Friend.swift in Sources */,
 				4683481C1CF85F8400F7C1AD /* SearchUserViewController.swift in Sources */,
-				468347FE1CF85F5D00F7C1AD /* Achievement.swift in Sources */,
 				468347ED1CF769D900F7C1AD /* addEventToCalendar.swift in Sources */,
+				463445E31D31248800308A70 /* Upload.swift in Sources */,
+				463445D71D31248800308A70 /* Cursus.swift in Sources */,
 				46DA0CD01D0AF809001C92CE /* ProjectTableViewCell.swift in Sources */,
 				4683482F1CF8600300F7C1AD /* UserManager.swift in Sources */,
-				468348061CF85F5D00F7C1AD /* ScaleTeamsManager.swift in Sources */,
-				468348011CF85F5D00F7C1AD /* Flag.swift in Sources */,
-				4683480D1CF85F5D00F7C1AD /* User.swift in Sources */,
 				4686F87A1D1E97D7001B6DEF /* DuoQuadraLoader.swift in Sources */,
 				468348391CF8603500F7C1AD /* UserRouter.swift in Sources */,
-				468348041CF85F5D00F7C1AD /* Scale.swift in Sources */,
-				468347FF1CF85F5D00F7C1AD /* Campus.swift in Sources */,
+				463445E41D31248800308A70 /* User.swift in Sources */,
 				468348181CF85F8400F7C1AD /* ProfilViewController.swift in Sources */,
-				468348091CF85F5D00F7C1AD /* Team.swift in Sources */,
 				468348171CF85F8400F7C1AD /* LoginViewController.swift in Sources */,
-				468348081CF85F5D00F7C1AD /* SuperModel.swift in Sources */,
+				463446051D31356500308A70 /* Friend+CoreDataProperties.swift in Sources */,
 				4683481B1CF85F8400F7C1AD /* SearchUserContainerViewController.swift in Sources */,
 				469804281CF4DB3C007C2D2B /* SearchManagerDelegation.swift in Sources */,
 				4683481A1CF85F8400F7C1AD /* ScaleTeamsViewController.swift in Sources */,
-				468348021CF85F5D00F7C1AD /* Language.swift in Sources */,
-				468348031CF85F5D00F7C1AD /* Project.swift in Sources */,
 				468348381CF8603500F7C1AD /* ScaleTeamsRouter.swift in Sources */,
-				468348001CF85F5D00F7C1AD /* Cursus.swift in Sources */,
-				468348051CF85F5D00F7C1AD /* ScaleTeam.swift in Sources */,
+				463445FD1D312BB900308A70 /* UserLocal.swift in Sources */,
+				463446101D315C8D00308A70 /* FriendViewController.swift in Sources */,
 				4683481D1CF85F8400F7C1AD /* SkillsViewController.swift in Sources */,
+				463445FC1D312BB900308A70 /* UserLocal+CoreDataProperties.swift in Sources */,
 				46DA0CD21D0AF809001C92CE /* SkillTableViewCell.swift in Sources */,
+				463445E11D31248800308A70 /* TeamUpload.swift in Sources */,
+				463445DE1D31248800308A70 /* Skill.swift in Sources */,
+				463445D91D31248800308A70 /* Language.swift in Sources */,
+				463445C21D3123C800308A70 /* FriendsManager.swift in Sources */,
 				4683483B1CF8603F00F7C1AD /* ShowAlert.swift in Sources */,
+				463445D81D31248800308A70 /* Flag.swift in Sources */,
 				4648C9A31CC6A9F700E82D68 /* AppDelegate.swift in Sources */,
+				463445C41D31245B00308A70 /* ScaleTeamsManager.swift in Sources */,
 				468348351CF8602C00F7C1AD /* ApiRouter.swift in Sources */,
-				4683480C1CF85F5D00F7C1AD /* Upload.swift in Sources */,
+				463445DA1D31248800308A70 /* Project.swift in Sources */,
+				463445DB1D31248800308A70 /* Scale.swift in Sources */,
+				463445D51D31248800308A70 /* Achievement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,7 +974,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1104,6 +1164,20 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		463445E51D31262800308A70 /* FriendsDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				463445E61D31262800308A70 /* FriendsDB.xcdatamodel */,
+			);
+			currentVersion = 463445E61D31262800308A70 /* FriendsDB.xcdatamodel */;
+			name = FriendsDB.xcdatamodeld;
+			path = Models/Local/FriendsDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4683B4591CC26999005DBAA6 /* Project object */;
 }
