@@ -13,7 +13,7 @@ import CoreData
 class Friend: NSManagedObject {
 
 	/**
-	Implement with an user from 42 Api in an object and check if he's already exist in CoreData with his id index. If he does, update the row otherwise create it. In both return the coreData Object implemented.
+	Implement with an user from 42 Api in an object and check if he's already exist in CoreData with his id index. If he does, update the row otherwise create it. In both cases return the coreData Object implemented.
 	
 	```
 	let context = UIApplication.sharedApplication().managedObjectContext

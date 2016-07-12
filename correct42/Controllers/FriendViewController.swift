@@ -10,6 +10,10 @@ import UIKit
 import CoreData
 import MessageUI
 
+/**
+View who displaying friends added on search or correction user tab bar item.
+Show location and allow to send message or call directly ours 42 friends.
+*/
 class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, MFMessageComposeViewControllerDelegate {
 
 	// MARK: - Proprieties
@@ -26,22 +30,34 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	}()
 	
 	// MARK: - IBOutlets
+	/// TableView in friends tab bar item.
 	@IBOutlet weak var tableView: UITableView!
+	
+	/// Edit button in navigation bar.
 	@IBOutlet weak var editButton: UIBarButtonItem!
+	
+	/// how to add friends image.
 	@IBOutlet weak var howToImg: UIImageView!
 	
 	// MARK: - IBActions
+	/// Set/Unset table to editing mode.
 	@IBAction func editAction(sender: UIBarButtonItem) {
 			tableView.setEditing(!tableView.editing, animated: true)
 	}
 	
 	
 	// MARK: - View life cycle
+	/// Init the view with `initView` and refresh friends data.
 	override func viewWillAppear(animated: Bool) {
 		initView()
 		refreshData()
 	}
 	
+	/**
+	- Unlink `FriendsManager.fetchedResults.delegate`.
+	- Set table editing to false.
+	- Stop refresh control animation.
+	*/
 	override func viewWillDisappear(animated: Bool) {
 		friendsManager.fetchedResults.delegate = nil
 		tableView.setEditing(false, animated: false)
@@ -65,19 +81,30 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
     */
 
 	// MARK: - Methods
+	/// Call to `FriendsManager.refresh`.
 	func refreshData() {
 		friendsManager.refresh(UserManager.Shared().loginUser!) { (errorOpt) in
 			if let error = errorOpt {
 				showAlertWithTitle("Api 42", message: "\(error.userInfo["message"])", view: self)
 			} else {
 				self.refreshControl.endRefreshing()
-				//self.tableView.reloadData()
-				self.verifieContent(false)
+				self.verifyContentEmpty()
 			}
 		}
 	}
 	
 	// MARK: - Private methods
+	/**
+	Init `tableView`:
+	- Add `refreshControl` as index 0.
+	- Add custom cell with `cellName`.
+	- Add Self to delegatation.
+	- Add Self to data source.
+	- Reload Data
+	
+	Init `FriendsManager`:
+	- Add Self to `FriendsManager.fetchedResults` delegation and perform Fetch.
+	*/
 	private func initView(){
 		tableView.insertSubview(refreshControl, atIndex: 0)
 		let cell = UINib(nibName: cellName, bundle: nil)
@@ -89,7 +116,14 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		tableView.reloadData()
 	}
 	
-	private func verifieContent(animated:Bool = true){
+	/**
+	Verify if content is empty to display how to add friends image `howToImg`
+	else display `tableView`
+	- Animation duration: 0.7s
+	
+	- Parameter animated: Boolean to set the animation time to 0
+	*/
+	private func verifyContentEmpty(animated:Bool = true){
 		var duration = 0.0
 		if animated {
 			duration = 0.7
@@ -113,6 +147,7 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	}
 	
 	// MARK: - TableView delegation
+	/// Add custom cell `cellName` into tableView.
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		if let cell = tableView.dequeueReusableCellWithIdentifier(cellName) as? FriendTableViewCell,
 			let friend = friendsManager.fetchedResults.objectAtIndexPath(indexPath) as? Friend{
@@ -123,6 +158,7 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		return errorCell
 	}
 	
+	/// Give to the `tableView` the number of rows
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if let list = friendsManager.list {
 			return list.count
@@ -130,15 +166,19 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		return 0
 	}
 	
+	/// Give to the `tableView` the height of rows
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 		return 57
 	}
 	
+	/**
+	Delete a friend when his delete button is pushed and verify if content is not empty.
+	*/
 	func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 		if editingStyle == UITableViewCellEditingStyle.Delete{
 			if let friend = friendsManager.fetchedResults.objectAtIndexPath(indexPath) as? Friend {
 				friendsManager.remove(friend)
-				verifieContent()
+				verifyContentEmpty()
 			}
 		}
 	}
