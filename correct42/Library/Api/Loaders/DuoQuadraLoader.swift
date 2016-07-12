@@ -47,8 +47,8 @@ class DuoQuadraLoader : DataLoader {
 	*/
 	init(){
 		oauth2 = OAuth2CodeGrant.init(settings: [
-			"client_id": "a94a2723cbc81403ded70bb83444030dd15f47f3c0469bfe9b576cf648739291",
-			"client_secret": "e8011d26fe85872ae11016065a01aa41274740b2ee0f6fb9f962b2c8eb74ba2f",
+			"client_id": "<#UID#>",
+			"client_secret": "<#secretID#>",
 			"authorize_uri":"https://api.intra.42.fr/oauth/authorize",
 			"token_uri": "https://api.intra.42.fr/oauth/token",
 			"redirect_uris":["correct42://oauth-callback/intra"],
@@ -103,12 +103,14 @@ class DuoQuadraLoader : DataLoader {
 				if (numberRefreshTriedAfterFail < numberRefreshTriedAfterFailMax){
 					numberRefreshTriedAfterFail += 1
 					if let callbackNOpt = retry {
-						callbackNOpt()
+						refreshToken({ (_, _) in
+							callbackNOpt()
+						})
 					}
 				} else {
 					if let didFailNOpt = didFail {
 						numberRefreshTriedAfterFail = 0
-						didFailNOpt(nil, NSError(domain: self.domain, code: 401, userInfo: ["error":"Forbidden", "message":"Refresh token impossible"]))
+						didFailNOpt(nil, NSError(domain: self.domain, code: 401, userInfo: ["error":"Forbidden", "message":"Unable to refresh token"]))
 					}
 				}
 				return nil

@@ -43,15 +43,15 @@ class FriendTableViewCell: UITableViewCell {
 	@IBAction func smsAction(sender: UIButton) {
 		if let phoneNumber = formatPhoneNumber(), let view = viewOpt {
 			let messageVC = MFMessageComposeViewController()
-			messageVC.body = "";
-			messageVC.recipients = [phoneNumber]
-			messageVC.messageComposeDelegate = view;
-			if messageVC.canBecomeFirstResponder() {
+			if MFMessageComposeViewController.canSendText() {
+				messageVC.body = "";
+				messageVC.recipients = [phoneNumber]
+				messageVC.messageComposeDelegate = view;
 				view.presentViewController(messageVC, animated: true, completion: nil)
 			}
 		} else {
 			if let view = viewOpt {
-				showAlertWithTitle("Open 42 SMS", message: "Le numéro n'est pas disponible ou dans un format inconnu.", view: view)
+				showAlertWithTitle("Open 42 SMS", message: "The number is unknow or badly formated", view: view)
 			}
 		}
 	}

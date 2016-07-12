@@ -50,6 +50,7 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	/// Init the view with `initView` and refresh friends data.
 	override func viewWillAppear(animated: Bool) {
 		initView()
+		verifyContentEmpty(false)
 		refreshData()
 	}
 	
@@ -85,11 +86,10 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
 	func refreshData() {
 		friendsManager.refresh(UserManager.Shared().loginUser!) { (errorOpt) in
 			if let error = errorOpt {
-				showAlertWithTitle("Api 42", message: "\(error.userInfo["message"])", view: self)
-			} else {
-				self.refreshControl.endRefreshing()
-				self.verifyContentEmpty()
+				ApiGeneral(myView: self).check(error, animate: true)
 			}
+			self.refreshControl.endRefreshing()
+			self.verifyContentEmpty()
 		}
 	}
 	

@@ -104,7 +104,7 @@ class ApiRequester {
 								callback!(nil, NSError(domain: self.oAuthProtocol!.domain, code: -2, userInfo: ["error":"Data Formating Fail"]))
 							}
 						} else {
-							callback!(nil, NSError(domain: self.oAuthProtocol!.domain, code: -1, userInfo: ["error":"No Connection"]))
+							callback!(nil, NSError(domain: self.oAuthProtocol!.domain, code: -1009, userInfo: ["error":"No Connection"]))
 						}
 						UIApplication.sharedApplication().networkActivityIndicatorVisible = false
 					}

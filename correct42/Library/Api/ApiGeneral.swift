@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Crashlytics
 
 /// Permit to centralize `apiRequester` errors
 class ApiGeneral {
@@ -54,9 +55,11 @@ class ApiGeneral {
 		case 500:
 			showAlertWithTitle(title, message: "We have some problem with the api server, please try again later.", view: view)
 			break
-		default:
-			print(nsError)
+		case -1009:
 			showAlertWithTitle(title, message: "Please check your internet connection and try again.", view: view)
+		default:
+			Crashlytics.sharedInstance().recordError(nsError)
+			showAlertWithTitle(title, message: "An unknown problem occurred.", view: view)
 			break
 		}
 	}
