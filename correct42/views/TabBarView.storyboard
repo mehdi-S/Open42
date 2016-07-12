@@ -577,11 +577,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="3sm-rk-g3F">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ICl-sL-QWZ">
+                            <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ICl-sL-QWZ">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" red="0.27004409140000002" green="0.53292550729999999" blue="0.55261600379999998" alpha="0.7514780405" colorSpace="calibratedRGB"/>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HowToAddFriend" translatesAutoresizingMaskIntoConstraints="NO" id="ZUm-tU-z0r">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HowToAddFriend" translatesAutoresizingMaskIntoConstraints="NO" id="ZUm-tU-z0r">
                                 <rect key="frame" x="144" y="166" width="311" height="268"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="268" id="kZM-8o-R2N"/>

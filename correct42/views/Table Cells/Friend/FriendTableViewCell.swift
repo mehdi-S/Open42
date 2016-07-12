@@ -12,15 +12,21 @@ import MessageUI
 class FriendTableViewCell: UITableViewCell {
 
 	// MARK: - Proprieties
+	/// Friends diplayed inside the cell
 	var cellFriendOpt:Friend?
+	/// View use to present message view controller or Alerts.
 	var viewOpt:FriendViewController?
 	
 	// MARK: - IBOutlets
+	/// Login or Surname of the `cellFriendOpt`
 	@IBOutlet weak var loginOrSurnameLabel: UILabel!
+	/// Location of the `cellFriendOpt`
 	@IBOutlet weak var locationLabel: UILabel!
+	/// Image of the `cellFriendOpt`
 	@IBOutlet weak var imageFriendView: UIImageView!
 	
 	// MARK: - IBActions
+	/// Call the friend if the number are available and well formated.
 	@IBAction func callAction(sender: UIButton) {
 		if let phoneNumber = formatPhoneNumber() {
 			if let phoneNumberURL = NSURL(string: "tel://\(phoneNumber)"){
@@ -33,6 +39,7 @@ class FriendTableViewCell: UITableViewCell {
 		}
 	}
 
+	/// Display messenger to send sms if the number are available and well formated
 	@IBAction func smsAction(sender: UIButton) {
 		if let phoneNumber = formatPhoneNumber(), let view = viewOpt {
 			let messageVC = MFMessageComposeViewController()
@@ -50,20 +57,16 @@ class FriendTableViewCell: UITableViewCell {
 	}
 	
 	// MARK: - Cell life cycle
+	/// Init radius corner of the `imageFriendView`
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
 		imageFriendView.layer.cornerRadius = imageFriendView.frame.size.width / 2;
 		imageFriendView.clipsToBounds = true;
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
-
 	
 	// MARK: - Methods
+	/// Fill the cell, keep friend inside `cellFirendOpt` and view into `viewOpt`.
 	func fill(friend:Friend, view:FriendViewController){
 		cellFriendOpt = friend
 		viewOpt = view
@@ -93,6 +96,7 @@ class FriendTableViewCell: UITableViewCell {
 	}
 	
 	// MARK: - Private methods
+	/// Check and format phone number.
 	private func formatPhoneNumber() -> String?{
 		if var phoneNumber = cellFriendOpt?.phoneNumber where cellFriendOpt?.phoneNumber != "" {
 			phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString("(", withString: "")
