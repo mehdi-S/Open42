@@ -45,13 +45,6 @@ class ScaleTeamsViewController: UIViewController, UITableViewDelegate, UITableVi
 	*/
 	override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-		scaleTeamsManager.fetchMyScaleTeams({ (_) in
-			self.scaleTeamsTable.reloadData()
-		}){ (error) in
-			ApiGeneral(myView: self).check(error, animate: true)
-		}
-		
 		//delegation
 		let nib = UINib(nibName: cellName, bundle: nil)
 		scaleTeamsTable.registerNib(nib, forCellReuseIdentifier: cellName)
@@ -59,6 +52,16 @@ class ScaleTeamsViewController: UIViewController, UITableViewDelegate, UITableVi
 		scaleTeamsTable.dataSource = self
 		scaleTeamsTable.addSubview(refreshControl)
     }
+	
+	/// Refresh data on changing tab bar item to self view
+	override func viewWillAppear(animated: Bool) {
+		// Do any additional setup after loading the view.
+		scaleTeamsManager.fetchMyScaleTeams({ (json) in
+			self.scaleTeamsTable.reloadData()
+		}){ (error) in
+			ApiGeneral(myView: self).check(error, animate: true)
+		}
+	}
 	
 	/// Ending refresh control
 	override func viewWillDisappear(animated: Bool) {

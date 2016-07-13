@@ -73,15 +73,13 @@ class ApiRequester {
 		// Check if oAuthProtocol has been implement
 		guard oAuthProtocol != nil else {
 			print("No protocol implemented in ApiRequester().oAuthProtocol")
-			if let callbackUnWrap = callback {
-				callbackUnWrap(nil, NSError(domain: "ApiRequester", code: -1, userInfo: ["error":"No protocol implemented in ApiRequester().oAuthProtocol"]))
-			}
+			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
 			return
 		}
-		
 		// get header or nothing
-		if let hdrs = oAuthProtocol!.getHeadersFromProtocolAuthorizedOrRefreshAndRequest(router, didFail: callback, retry: {self.request(router, callback: callback)}) {
-			
+		if let hdrs = oAuthProtocol!.getHeadersFromProtocolAuthorizedOrRefreshAndRequest(router,
+		                                                                                 didFail: callback,
+		                                                                                 retry: {self.request(router, callback: callback)}) {
 			// Make request
 			Alamofire.request(
 				router.method,
@@ -94,25 +92,42 @@ class ApiRequester {
 						if let response = reply.response {
 							if let jsonData = reply.result.value{
 								let responseJSON = JSON(jsonData);
-								if (responseJSON["error"].string == nil){
+								if response.statusCode == 200 {
 									callback!(responseJSON, nil)
 								}
 								else {
-									callback!(nil, NSError(domain: self.oAuthProtocol!.domain, code: response.statusCode, userInfo: ["error":responseJSON["error"].stringValue,"message":responseJSON["message"].stringValue]))
+									callback!(responseJSON, NSError(domain: self.oAuthProtocol!.domain, code: response.statusCode, userInfo: ["message":self.errorMessageFromJSON(responseJSON)]))
 								}
 							} else {
-								callback!(nil, NSError(domain: self.oAuthProtocol!.domain, code: -2, userInfo: ["error":"Data Formating Fail"]))
+								callback!(nil, NSError(domain: self.oAuthProtocol!.domain, code: response.statusCode, userInfo: ["message":"Server Problem"]))
 							}
 						} else {
-							callback!(nil, NSError(domain: self.oAuthProtocol!.domain, code: -1009, userInfo: ["error":"No Connection"]))
+							callback!(nil, NSError(domain: self.oAuthProtocol!.domain, code: -1009, userInfo: ["message":"No Connection"]))
 						}
 						UIApplication.sharedApplication().networkActivityIndicatorVisible = false
 					}
 			}
 		}
+		
 	}
 	
-	// TODO: Test if it work
+	/**
+	Take a jsonData where you think you have an error explaination string and return the contained string.
+	Case intercepted :
+	- json["error_description"]
+	- jsonData["error"]["message"]
+	- jsonData["error"]
+	- Returns: The contained error string or the json in stirng to see what happen wrong.
+	*/
+	private func errorMessageFromJSON(jsonData:JSON) -> String {
+		if let errorDescription = jsonData["error_description"].string {
+			return errorDescription
+		} else if let errorMessage = jsonData["error"]["message"].string {
+			return errorMessage
+		}
+		return ("Unknow case json Error : \(jsonData)")
+	}
+	
 	/**
 	Refresh the token of the oAuthprotocol implemented
 	
@@ -177,6 +192,7 @@ class ApiRequester {
 	- success: CallBack execute if the request success, take String for the content of the File.
 	- failure: CallBack execute if the request fail.
 	*/
+	// TODO: Change to onCompletion
 	func downloadImage(imageUrl:String, success:(UIImage)->Void, failure:(NSError)->Void){
 		UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 		Alamofire.request(.GET, imageUrl).response() {
@@ -193,6 +209,24 @@ class ApiRequester {
 				UIApplication.sharedApplication().networkActivityIndicatorVisible = false
 			}
 		}
+	}
+	
+	// TODO: Add Token if need secure
+	func uploadImage(router:ApiRouter, image:UIImage, onProgress: (percent:Double)->Void, onCompletion: (NSError?)->Void){
+		//		manager.session.configuration.HTTPAdditionalHeaders = ["Content-Type": "application/octet-stream"]
+		//
+		//
+		//		let imageData: NSMutableData = NSMutableData.dataWithData(UIImageJPEGRepresentation(imageTest.image, 30));
+		//
+		//		Alamofire.upload(.POST, "http://localhost:8080/rest/service/upload?attachmentName=file.jpg",  imageData)
+		//			.progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+		//				println(totalBytesWritten)
+		//			}
+		//			.responseString { (request, response, JSON, error) in
+		//				println(request)
+		//				println(response)
+		//				println(JSON)
+		//		}
 	}
 	
 	/**
@@ -229,7 +263,7 @@ class ApiRequester {
 			UIApplication.sharedApplication().networkActivityIndicatorVisible = false
 		}
 	}
-
+	
 	/**
 	Check if `oAuthProtocol` load is authorized or not.
 	- Returns: True if authorized.
@@ -248,6 +282,12 @@ class ApiRequester {
 	func handleUrl(url:NSURL){
 		if let oauth = oAuthProtocol {
 			oauth.handleRedirectURL(url)
+		}
+	}
+	
+	func tokenExpiration(){
+		if let oauth = oAuthProtocol {
+			oauth.tokenExpiration()
 		}
 	}
 }

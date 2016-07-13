@@ -57,8 +57,14 @@ class ApiGeneral {
 			break
 		case -1009:
 			showAlertWithTitle(title, message: "Please check your internet connection and try again.", view: view)
+		case 0:
+			if let message = nsError.userInfo["message"] {
+				showAlertWithTitle(title, message: "\(message)", view: view)
+				break
+			}
 		default:
 			Crashlytics.sharedInstance().recordError(nsError)
+			print(nsError)
 			showAlertWithTitle(title, message: "An unknown problem occurred.", view: view)
 			break
 		}

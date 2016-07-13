@@ -80,8 +80,8 @@ class FriendsManager {
 					try self.context.save()
 					try self.fetchedResults.performFetch()
 					onCompletion(nil)
-				} catch(let error) {
-					onCompletion(NSError(domain:"CoreData", code: -1, userInfo: ["message":"Erreur on CoreData : \(error)"]))
+				} catch {
+					onCompletion(NSError(domain:"CoreData", code: 0, userInfo: ["message":"Erreur on CoreData"]))
 				}
 			} else {
 				onCompletion(NSError(domain:"Friends", code: 0, userInfo: ["message":"Error on adding friend."]))
@@ -126,7 +126,7 @@ class FriendsManager {
 					let friendUser = User(jsonFetch:jsonRow)
 
 					guard (Friend.from(friendUser, forThe: currentUser, inFriendContext: self.context) != nil) else {
-						onCompletion(NSError(domain:"Friends", code: 0, userInfo: ["message":"Error on refresh friend."]))
+						onCompletion(NSError(domain:"Friends", code: 0, userInfo: ["message":"An problem occured when refreshing friend."]))
 						return
 					}
 					do {
@@ -137,8 +137,8 @@ class FriendsManager {
 							try self.fetchedResults.performFetch()
 							onCompletion(nil)
 						}
-					} catch(let error) {
-						onCompletion(NSError(domain:"CoreData", code: -1, userInfo: ["message":"Erreur on CoreData : \(error)"]))
+					} catch {
+						onCompletion(NSError(domain:"CoreData", code: 0, userInfo: ["message":"Erreur on CoreData."]))
 						return
 					}
 			}

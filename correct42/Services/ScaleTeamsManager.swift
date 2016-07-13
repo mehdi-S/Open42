@@ -63,7 +63,10 @@ class ScaleTeamsManager {
 	*/
 	func fetchMyScaleTeams(success:([ScaleTeam])->Void, failure:(NSError)->Void){
 		apiRequester.request(ScaleTeamsRouter.Me){ (jsonDataOpt, errorOpt) in
-			if let jsonData = jsonDataOpt {
+			if let error = errorOpt {
+				failure(error)
+			}
+			else if let jsonData = jsonDataOpt {
 				self.list.removeAll()
 				for scaleInfos in jsonData.arrayValue {
 					let scaleTeam = ScaleTeam(jsonFetch: scaleInfos)
@@ -72,8 +75,6 @@ class ScaleTeamsManager {
 					}
 				}
 				success(self.list)
-			} else if let error = errorOpt {
-				failure(error)
 			}
 		}
 	}
@@ -112,13 +113,13 @@ class ScaleTeamsManager {
 			let endDate = scaleTeam.beginAt.dateByAddingTimeInterval(Double(scaleTeam.scale.duration))
 			addEventToCalendar(title: scaleTeam.scale.name, description: "", startDate: startDate, endDate: endDate, onCompletion: { (success, error) in
 				if (!success){
-					onError(NSError(domain: "Corrections", code: -1, userInfo: [0:"A problem happen when adding \(scaleName) \(scaleTeam.beginAtFormated) in calendar"]))
+					onError(NSError(domain: "Corrections", code: 0, userInfo: ["message":"A problem happen when adding \(scaleName) \(scaleTeam.beginAtFormated) in calendar"]))
 				} else {
 					self.addPersitentId(idScaleTeam)
 				}
 			})
 		} else {
-			onError(NSError(domain: "Corrections", code: -1, userInfo: [0:"Entry for \(scaleName) \(scaleTeam.beginAtFormated) already exist."]))
+			onError(NSError(domain: "Corrections", code: 0, userInfo: ["message":"Entry for \(scaleName) \(scaleTeam.beginAtFormated) already exist."]))
 		}
 	}
 	
