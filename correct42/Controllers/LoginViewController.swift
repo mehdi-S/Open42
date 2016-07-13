@@ -49,11 +49,11 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 	@IBAction func connect42(sender: UIButton) {
 		LoginLoading.startAnimating()
 		button42Login.hidden = true
-		apiRequester.connect(self){ (wasFailure, error) in
+		apiRequester.connect(self){ (wasFailure, errorOpt) in
 			if !wasFailure {
 				self.connect()
-			} else {
-				showAlertWithTitle("Api 42", message: "\(error)", view: self)
+			} else if let error = errorOpt as? NSError {
+				ApiGeneral(myView: self).check(error, animate: false)
 			}
 		}
 	}
@@ -70,7 +70,6 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 	*/
 	override func viewDidLoad() {
 		searchManager.delegate = self
-		progressBarLogin.hidden = true
 	}
 	
 	/**
@@ -78,7 +77,7 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 	check connect() (work at SafariView dissmiss)
 	and set loadingInformationsLabel to "".
 	*/
-	override func viewDidAppear(animated: Bool) {
+	override func viewWillAppear(animated: Bool) {
 		progressBarLogin.progress = 0.0
 		loadingInformationsLabel.text = "Loading profile..."
 		
@@ -159,33 +158,32 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 		self.button42Login.hidden = true
 		if !searchManager.fileAlreadyExist() {
 			self.loadingInformationsLabel.text = "Loading users list for research more faster than ever...\n(Only happens once a year)"
-			searchManager.fetchAllUsersFromAPI{ (success, error) in
-				if (success){
-					dispatch_async(dispatch_get_main_queue(), {
-						self.performSegueWithIdentifier("connectSegue", sender: self)
-					})
-				} else {
-					ApiGeneral(myView: self).check(error, animate: false)
-				}
-				self.LoginLoading.stopAnimating()
-				self.button42Login.hidden = false
-				self.progressBarLogin.hidden = true
-			}
+			searchManager.fetchAllUsersFromAPI(onCompletionSearchManager)
 		} else {
 			progressBarLogin.progress = 1.0
 			self.loadingInformationsLabel.text = "Loading users list..."
-			searchManager.fetchUsersFromFile({ (success, error) in
-				if (success){
-					dispatch_async(dispatch_get_main_queue(), {
-						self.performSegueWithIdentifier("connectSegue", sender: self)
-					})
-				} else {
-					ApiGeneral(myView: self).check(error, animate: false)
-				}
-				self.LoginLoading.stopAnimating()
-				self.button42Login.hidden = false
-				self.progressBarLogin.hidden = true
+			searchManager.fetchUsersFromFile(onCompletionSearchManager)
+		}
+	}
+	
+	/**
+	Perform when all data from user and list of user are done.
+	
+	- Parameter success: bool who indicate if we have an error or not
+	- Parameter error: Optional NSError who details the error sned by searchmanager
+	*/
+	private func onCompletionSearchManager(success:Bool, errorOpt:NSError?){
+		if (success){
+			dispatch_async(dispatch_get_main_queue(), {
+				self.performSegueWithIdentifier("connectSegue", sender: self)
 			})
+		} else{
+			if let error = errorOpt {
+				ApiGeneral(myView: self).check(error, animate: false)
+			}
+			self.LoginLoading.stopAnimating()
+			self.button42Login.hidden = false
+			self.progressBarLogin.hidden = true
 		}
 	}
 }
