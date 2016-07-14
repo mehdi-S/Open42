@@ -58,7 +58,7 @@ class SearchManager {
 	lazy var apiRequester = ApiRequester.Shared()
 	
 	/// Constante of the file name
-	let nameFile = "usersNameListV1.2.1"
+	let nameFile = "usersNameListV1.4"
 	
 	/// Content file of the file at `pathFile`
 	var contentFile = ""
@@ -119,9 +119,21 @@ class SearchManager {
 			fillUserListFromAPIAtBeginPagetoTheEnd(1)
 		}
 	}
-	
 	func groupFromResearch(value:String) -> [(String, [User])]{
-		let filtredArray = self.listSearchUser.filter({$0.login.containsString(value)})
+		let filtredArray = self.listSearchUser.filter({ (user) in
+			let valueTrimmed = value.trim()
+			let values = valueTrimmed.componentsSeparatedByString(" ")
+			if values.count > 1 {
+				return (user.firstName.hasPrefix(values[0])
+						&& user.lastName.hasPrefix(values[1]))
+						||
+						(user.lastName.hasPrefix(values[0])
+						&& user.firstName.hasPrefix(values[1]))
+			}
+			return user.login.hasPrefix(valueTrimmed)
+					|| user.firstName.hasPrefix(valueTrimmed)
+					|| user.lastName.hasPrefix(valueTrimmed)
+		})
 		let groupArray = filtredArray.groupBy{ (element) -> String in
 			if let FirstCharaterLogin = element.login.characters.first{
 				return ("\(FirstCharaterLogin)")
@@ -158,37 +170,44 @@ class SearchManager {
 				if let jsonData = jsonDataOpt {
 					if (jsonData.arrayValue.count > 0){
 						for userInfos in jsonData.arrayValue {
-							
 							// Catch information from user
 							let user = User(jsonFetch: userInfos)
 							
-							// Format the Id
-							let userId = ":\(user.id)"
-							
 							// Construct userInfos
-							var userInfos = user.login
-							userInfos.appendContentsOf(userId)
-							print(userInfos)
-							userInfos.appendContentsOf("\n")
+							var userInfos = "\(user.id):\(user.login)"
 							
-							// Add data to the content file string
-							self.contentFile.appendContentsOf(userInfos)
-							
-							// Add user in listSearchUser array
-							self.listSearchUser.append(user)
-							
-							/**
-							If searchManager have a delegate give the percent progression
-							*/
-							if let delegation = self.delegate {
-								if let delegateCompletionPercent = delegation.searchManager {
-									delegateCompletionPercent(percentOfCompletion: self.knowPercentAlpha(userInfos.lowercaseString.characters.first!))
+							self.apiRequester.request(UserRouter.ReadUser(user.id)){ (jsonDataOpt, errorOpt) in
+								if let json = jsonDataOpt {
+									let user = User(jsonFetch: json)
+									
+									userInfos.appendContentsOf(":\(user.firstName.lowercaseString):\(user.lastName.lowercaseString)")
+									print(userInfos)
+									userInfos.appendContentsOf("\n")
+									
+									// Add data to the content file string
+									self.contentFile.appendContentsOf(userInfos)
+									
+									// Add user in listSearchUser array
+									self.listSearchUser.append(user)
+									
+									/**
+									If searchManager have a delegate give the percent progression
+									*/
+									if let delegation = self.delegate {
+										if let delegateCompletionPercent = delegation.searchManager {
+											if let firstChar = user.firstName.lowercaseString.characters.first {
+												delegateCompletionPercent(percentOfCompletion: self.knowPercentAlpha(firstChar))
+											}
+										}
+									}
+									
 								}
 							}
 						}
 						// Go to the next page !
 						self.fillUserListFromAPIAtBeginPagetoTheEnd(page + 1)
 					} else {
+						// TODO: Will be corrup because asynchrone.
 						do {
 							try self.contentFile.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding)
 						} catch {
@@ -244,8 +263,8 @@ class SearchManager {
 					for InfosUser in InfosUsers {
 						if (InfosUser != ""){
 							let InfoUser = InfosUser.componentsSeparatedByString(":")
-							if let idUser:Int = Int(InfoUser[1]){
-								listSearchUser.append(User(login: InfoUser[0], id: idUser))
+							if let idUser:Int = Int(InfoUser[0]){
+								listSearchUser.append(User(id: idUser, login: InfoUser[1], firstName:InfoUser[2], lastName:InfoUser[3]))
 							}
 						}
 					}
@@ -266,7 +285,6 @@ class SearchManager {
 	/// To know percent compared to the letter in alphabet
 	private func knowPercentAlpha(letter:Character) -> Int{
 		let asciiInt = letter.unicodeScalarCodePoint()
-		
 		if (asciiInt >= 97 && asciiInt <= 122){
 			let percent = (asciiInt - 97) * 100 / 25
 			return (Int(percent))
@@ -301,5 +319,13 @@ private extension Array{
 			dict[key] = array
 		}
 		return dict
+	}
+}
+
+extension String
+{
+	func trim() -> String
+	{
+		return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
 	}
 }

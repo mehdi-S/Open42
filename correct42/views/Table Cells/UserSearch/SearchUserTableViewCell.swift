@@ -15,5 +15,6 @@ class SearchUserTableViewCell: UITableViewCell {
 
 	/// Login of an user 
 	@IBOutlet weak var loginUser: UILabel!
+	@IBOutlet weak var displayName: UILabel!
 
 }

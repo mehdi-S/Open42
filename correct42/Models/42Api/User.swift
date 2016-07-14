@@ -52,16 +52,15 @@ class User : SuperModel {
 		return (self.jsonData["displayname"].stringValue)
 	}()
 	
-	/// Surname 
-	var surname:String {
-		get{
-			let surname = displayName.componentsSeparatedByString(" ")[0]
-			if surname != "" {
-				return (surname)
-			}
-			return ""
-		}
-	}
+	/// First name
+	lazy var firstName:String = {
+		return (self.jsonData["first_name"].stringValue)
+	}()
+	
+	/// First name
+	lazy var lastName:String = {
+		return (self.jsonData["last_name"].stringValue)
+	}()
 	
 	/// Url of the profil image.
 	lazy var imageUrl:String = {
@@ -155,10 +154,12 @@ class User : SuperModel {
 	
 	// MARK: - Initialisers
 	/// Init an user with his login and id.
-	init(login:String, id:Int){
+	init(id:Int, login:String, firstName:String, lastName:String){
 		super.init(jsonFetch: "")
 		self.login = login
 		self.id = id
+		self.firstName = firstName
+		self.lastName = lastName
 	}
 	
 	/// Init an user with data fetch from the 42 School's REST API.

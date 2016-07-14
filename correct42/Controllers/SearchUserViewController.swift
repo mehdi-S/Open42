@@ -87,6 +87,10 @@ class SearchUserViewController: UIViewController, UITableViewDelegate, UITableVi
 		return (sectionCount)
 	}
 	
+	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+		return 48
+	}
+	
 	func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
 		var arrayTitle = [String]()
 		for section in users{
@@ -130,6 +134,7 @@ class SearchUserViewController: UIViewController, UITableViewDelegate, UITableVi
 			return (nil)
 		}()
 		userListCellPrototype!.loginUser.text = userObject.login
+		userListCellPrototype!.displayName.text = "\(userObject.lastName.capitalizedString) \(userObject.firstName.capitalizedString)"
 		return (userListCellPrototype!)
 	}
 	
