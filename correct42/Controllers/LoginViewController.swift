@@ -52,9 +52,12 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 		apiRequester.connect(self){ (wasFailure, errorOpt) in
 			if !wasFailure {
 				self.connect()
+				return
 			} else if let error = errorOpt as? NSError {
 				ApiGeneral(myView: self).check(error, animate: false)
 			}
+			self.button42Login.hidden = false
+			self.LoginLoading.stopAnimating()
 		}
 	}
 	
@@ -82,8 +85,8 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 		loadingInformationsLabel.text = "Loading profile..."
 		
 		self.progressBarLogin.hidden = true
-		self.button42Login.hidden = false
-		self.LoginLoading.stopAnimating()
+		//self.button42Login.hidden = false
+		//self.LoginLoading.stopAnimating()
 	}
 	
 	// MARK: - SafariView delegate
@@ -120,10 +123,6 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 		if (self.apiRequester.isAuthorized()){
 			self.button42Login.hidden = true
 			self.fetchUser()
-		} else {
-			self.progressBarLogin.hidden = true
-			self.button42Login.hidden = false
-			self.LoginLoading.stopAnimating()
 		}
 
 	}
@@ -154,13 +153,12 @@ class LoginViewController: UIViewController, SFSafariViewControllerDelegate, Sea
 	At the end: stop animate `LoginLoading`, display `button42Login` and hide `progressBarLogin`.
 	*/
 	private func fetchListUser() { // ~2 min 30.
-		self.progressBarLogin.hidden = false
 		self.button42Login.hidden = true
 		if !searchManager.fileAlreadyExist() {
+			self.progressBarLogin.hidden = false
 			self.loadingInformationsLabel.text = "Loading users list for research more faster than ever...\n(Only happens once a year)"
 			searchManager.fetchAllUsersFromAPI(onCompletionSearchManager)
 		} else {
-			progressBarLogin.progress = 1.0
 			self.loadingInformationsLabel.text = "Loading users list..."
 			searchManager.fetchUsersFromFile(onCompletionSearchManager)
 		}
