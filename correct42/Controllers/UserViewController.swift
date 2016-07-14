@@ -148,7 +148,7 @@ class UserViewController: UIViewController, UIGestureRecognizerDelegate, MFMessa
 				phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString(".", withString: "")
 				phoneNumber = phoneNumber.stringByReplacingOccurrencesOfString(" ", withString: "")
 					
-				let alert = UIAlertController(title: "\(self.user.currentUser!.surname)'s Contacts", message: "What do you want to do with the number phone of \(self.user.currentUser!.surname) ?", preferredStyle: .ActionSheet)
+				let alert = UIAlertController(title: "\(self.user.currentUser!.firstName)'s Contacts", message: "What do you want to do with the number phone of \(self.user.currentUser!.firstName) ?", preferredStyle: .ActionSheet)
 				
 				alert.addAction(UIAlertAction(title: "Call", style: .Default, handler: { (alertAction) in
 					if let phoneNumberURL = NSURL(string: "tel://\(phoneNumber)"){
@@ -158,7 +158,7 @@ class UserViewController: UIViewController, UIGestureRecognizerDelegate, MFMessa
 				
 				alert.addAction(UIAlertAction(title: "Sms", style: .Default, handler: { (alertAction) in
 						let messageVC = MFMessageComposeViewController()
-						messageVC.body = "Salutation \(self.user.currentUser!.surname),";
+						messageVC.body = "Salutation \(self.user.currentUser!.firstName),";
 						messageVC.recipients = [phoneNumber]
 						messageVC.messageComposeDelegate = self;
 						

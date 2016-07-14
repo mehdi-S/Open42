@@ -21,17 +21,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Teh-5i-Map">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </imageView>
-                            <searchBar contentMode="redraw" placeholder="Search login" translatesAutoresizingMaskIntoConstraints="NO" id="QYE-XD-44f">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="60b-mn-uLl">
+                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
+                                <color key="backgroundColor" red="0.27004409140000002" green="0.53292550729999999" blue="0.55261600379999998" alpha="0.75147804054054057" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.15814583322326242" green="0.33756034606767682" blue="0.30926571391218016" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="QYE-XD-44f">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <color key="backgroundColor" red="0.20069020839999999" green="0.42837079430000002" blue="0.39246434330000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.20069020839999999" green="0.42837079430000002" blue="0.39246434330000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="60b-mn-uLl">
-                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
-                                <color key="backgroundColor" red="0.27004409140000002" green="0.53292550729999999" blue="0.55261600379999998" alpha="0.75147804054054057" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" red="0.15814583322326242" green="0.33756034606767682" blue="0.30926571391218016" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.20069020986557007" green="0.42837080359458923" blue="0.39246433973312378" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -631,6 +631,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="h5l-sx-m2K"/>
-        <segue reference="Dlh-pB-ELa"/>
+        <segue reference="L7q-8U-Pgj"/>
     </inferredMetricsTieBreakers>
 </document>

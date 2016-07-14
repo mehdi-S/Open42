@@ -7,33 +7,48 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="9Jf-rN-X5s" customClass="SearchUserTableViewCell" customModule="Open42" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="48" id="9Jf-rN-X5s" customClass="SearchUserTableViewCell" customModule="Open42" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Jf-rN-X5s" id="CtP-bT-RkZ">
-                <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="287" height="47.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqu-Vf-uNk">
-                        <rect key="frame" x="8" y="8" width="271" height="27.5"/>
+                        <rect key="frame" x="8" y="8" width="271" height="22.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22.5" id="sfo-cZ-xbe"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BT5-wx-8Ha">
+                        <rect key="frame" x="8" y="29" width="279" height="10.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10.5" id="rdJ-8q-69h"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.64936474116161613" green="0.64936474116161613" blue="0.64936474116161613" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" red="0.20069020839999999" green="0.42837079430000002" blue="0.39246434330000002" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="Rqu-Vf-uNk" firstAttribute="trailing" secondItem="CtP-bT-RkZ" secondAttribute="trailingMargin" id="NpX-8i-VVw"/>
-                    <constraint firstItem="Rqu-Vf-uNk" firstAttribute="leading" secondItem="CtP-bT-RkZ" secondAttribute="leadingMargin" id="iER-vD-gcy"/>
-                    <constraint firstItem="Rqu-Vf-uNk" firstAttribute="bottom" secondItem="CtP-bT-RkZ" secondAttribute="bottomMargin" id="tDD-lB-aIZ"/>
-                    <constraint firstItem="Rqu-Vf-uNk" firstAttribute="top" secondItem="CtP-bT-RkZ" secondAttribute="topMargin" id="v5D-4a-Yo7"/>
+                    <constraint firstItem="Rqu-Vf-uNk" firstAttribute="top" secondItem="CtP-bT-RkZ" secondAttribute="topMargin" id="3GH-5R-Grg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="BT5-wx-8Ha" secondAttribute="trailing" constant="-8" id="5DN-AZ-GHU"/>
+                    <constraint firstItem="BT5-wx-8Ha" firstAttribute="bottom" secondItem="CtP-bT-RkZ" secondAttribute="bottomMargin" id="5l2-Uh-sbp"/>
+                    <constraint firstItem="BT5-wx-8Ha" firstAttribute="leading" secondItem="CtP-bT-RkZ" secondAttribute="leadingMargin" id="97i-2v-C3z"/>
+                    <constraint firstItem="Rqu-Vf-uNk" firstAttribute="trailing" secondItem="CtP-bT-RkZ" secondAttribute="trailingMargin" id="I3p-bM-7Z2"/>
+                    <constraint firstItem="Rqu-Vf-uNk" firstAttribute="leading" secondItem="CtP-bT-RkZ" secondAttribute="leadingMargin" id="SCr-eb-Txb"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.20069020986557007" green="0.42837080359458923" blue="0.39246433973312378" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
+                <outlet property="displayName" destination="BT5-wx-8Ha" id="Rbh-6a-xYg"/>
                 <outlet property="loginUser" destination="Rqu-Vf-uNk" id="bP6-3C-pH4"/>
             </connections>
-            <point key="canvasLocation" x="184" y="305"/>
+            <point key="canvasLocation" x="184" y="307"/>
         </tableViewCell>
     </objects>
 </document>
