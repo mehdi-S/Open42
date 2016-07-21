@@ -5,8 +5,8 @@ Application IOS de l'intranet de l'École 42, ouverte à tous les élèves souha
 ## Installation
 1. Création du token d'application :
   - Rendez-vous dans les settings de votre profil sur l'intra de 42, onglet application et ajoutez une nouvelle application ([ou plus simplement ici](https://profile.intra.42.fr/oauth/applications/new)). Placez dans le champ Redirect uri: "correct42://oauth-callback/intra". Vous recevrez deux tokens qui correspondront à votre clientId (UID) ainsi que votre secretKey (SECRET). 
-2. Ouvrir correct42.xcworkspace avec Xcode pour avoir accès aux [pods](https://cocoapods.org), plutôt que le Open42.xcodeproj qui vous demandera d'inclure les frameworks (cf Tools et documentation).
-3. Inserez dans la class /correct42/Library/Api/[ApiRequester](https://github.com/emericspiroux/Open42/blob/master/correct42/Library/Api/ApiRequester.swift) votre clientId et secretKey dans les proprieties prévues à cet effet.
+2. Ouvrir Open42.xcworkspace avec Xcode pour avoir accès aux [pods](https://cocoapods.org), plutôt que le Open42.xcodeproj qui vous demandera d'inclure les frameworks (cf Tools et documentation).
+3. Inserez dans la class /correct42/Library/Api/[DuoQuadraLoader](https://github.com/emericspiroux/Open42/blob/master/correct42/Library/Api/Loaders/DuoQuadraLoader.swift) votre clientId et secretKey dans l'init d'oAuth2.
 4. Trouvez un ticket ou crée en un sur notre [waffle](https://waffle.io/emericspiroux/Open42).
 5. Créez une branche selon les rêgles du suivi de projet.
 6. Coder (ouf ce n'est pas trop tôt).
